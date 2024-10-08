@@ -1,0 +1,55 @@
+{
+    "Regions":
+        [
+            {
+                "county": "NUSA TENGGARA BARAT",
+                "code": "52",
+                "sales": "20000",
+                "pos" : "117.356862;-8.731257;0",
+                "tooltip": "NTB"
+            },
+            {
+                "county": "DKI JAKARTA",
+                "code": "31",
+                "sales": "41000",
+                "pos" : "106.847902;-6.191228;0",
+                "tooltip": "JKT"
+            },
+            {
+                "county": "SUMATERA BARAT",
+                "code": "13",
+                "sales": "60000",
+                "pos" : "100.800005;-0.73994;0",   
+                "tooltip": "PDG"
+            },
+            {
+                "county": "LAMPUNG",
+                "code": "18",
+                "sales": "45000",
+                "pos" : "104.885059;-4.824473;0",   
+                "tooltip": "LMP"
+            },
+            {
+                "county": "PAPUA",
+                "code": "91",
+                "sales": "100000",
+                "pos" : "138.904491;-3.943874;0",   
+                "tooltip": "PPA"
+            }
+        ],
+    "Legend":
+        [
+            {
+                "text": "High",
+                "color": "rgb(43,125,43)"
+            },
+            {
+                "text": "Medium",
+                "color": "rgb(231,140,7)"
+            },
+            {
+                "text": "Low",
+                "color": "rgb(187,0,0)"
+            }
+        ]
+}

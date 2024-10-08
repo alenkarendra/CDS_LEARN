@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGW001_CDS_MAP_RENDRA_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="CourseItem" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Nim"/>
+                    <PropertyRef Name="Item"/>
+                </Key>
+                <Property Name="Nim" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NIM" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Item" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Deskripsi" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="DESKRIPSI" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Durasi" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="DURASI" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Oleh" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tanggal" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Created on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Perubahan" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Changed On" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Course" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Nim"/>
+                </Key>
+                <Property Name="Nim" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="NIM" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nama" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nama" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Oleh" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Perubahan" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Changed On" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Tanggal" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Created on" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToItems" Relationship="ZGW001_CDS_MAP_RENDRA_SRV.ToItems" FromRole="FromRole_ToItems" ToRole="ToRole_ToItems"/>
+            </EntityType>
+            <Association Name="ToItems" sap:content-version="1">
+                <End Type="ZGW001_CDS_MAP_RENDRA_SRV.Course" Multiplicity="1" Role="FromRole_ToItems"/>
+                <End Type="ZGW001_CDS_MAP_RENDRA_SRV.CourseItem" Multiplicity="*" Role="ToRole_ToItems"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ToItems">
+                        <PropertyRef Name="Nim"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ToItems">
+                        <PropertyRef Name="Nim"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZGW001_CDS_MAP_RENDRA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="CourseItemSet" EntityType="ZGW001_CDS_MAP_RENDRA_SRV.CourseItem" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="CourseSet" EntityType="ZGW001_CDS_MAP_RENDRA_SRV.Course" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="ToItemsSet" Association="ZGW001_CDS_MAP_RENDRA_SRV.ToItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CourseSet" Role="FromRole_ToItems"/>
+                    <End EntitySet="CourseItemSet" Role="ToRole_ToItems"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="https://S4DEMO.SOLTIUS.CO.ID:44370/sap/opu/odata/sap/ZGW001_CDS_MAP_RENDRA_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://S4DEMO.SOLTIUS.CO.ID:44370/sap/opu/odata/sap/ZGW001_CDS_MAP_RENDRA_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

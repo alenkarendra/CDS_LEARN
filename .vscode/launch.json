@@ -1,0 +1,492 @@
+{
+  "configurations": [
+    {
+      "name": "Chrome",
+      "request": "launch",
+      //   "type": "pwa-chrome",
+      "type": "chrome",
+      "url": "http://localhost:8080/test/flpSandbox.html?sap-client=720&sap-ui-xx-viewCache=false#geomapindo-display",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Start cds_1",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/cds_1",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": ["--open", "test/flpSandbox.html#cds1-tile"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=710&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start cds_1 Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/cds_1",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flpSandbox.html#cds1-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=710&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start cds_1 Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/cds_1",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html#cds1-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=710&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start course_set",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/course_set",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": ["--open", "test/flpSandbox.html#courseset-tile"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=710&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start course_set Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/course_set",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flpSandbox.html#courseset-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=710&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start course_set Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/course_set",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html#courseset-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=710&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start fioricrud",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/fioricrud",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": ["--open", "test/flpSandbox.html#fioricrud-tile"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=710&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start fioricrud Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/fioricrud",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flpSandbox.html#fioricrud-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=710&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start fioricrud Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/fioricrud",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html#fioricrud-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=710&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start alp_001",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/alp_001",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": ["--open", "test/flpSandbox.html#alp001-tile"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start alp_001 Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/alp_001",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flpSandbox.html#alp001-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start alp_001 Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/alp_001",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html#alp001-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start alp_002",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/alp_002",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": ["--open", "test/flpSandbox.html#alp002-tile"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start alp_002 Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/alp_002",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flpSandbox.html#alp002-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start alp_002 Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/alp_002",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html#alp002-tile"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start mapsales",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/mapsales",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": ["--open", "test/flpSandbox.html#mapsales-display"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start mapsales Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/mapsales",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flpSandbox.html#mapsales-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start mapsales Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/mapsales",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html#mapsales-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start geomap_indo",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      //   "cwd": "${workspaceFolder}/geomap_indo/",
+      "cwd": "${workspaceFolder}/geomap_indo/",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": ["--open", "test/flpSandbox.html#geomapindo-display"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 8081,
+      "sourceMaps": true, // Add this line
+      "env": {
+        // "DEBUG": "--inspect",
+        "DEBUG": "--inspect-brk",
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start geomap_indo Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/geomap_indo",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flpSandbox.html#geomapindo-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start geomap_indo Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/geomap_indo",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html#geomapindo-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 8081,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    }
+  ],
+  "compounds": []
+}

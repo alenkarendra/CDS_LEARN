@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZRENDRA_001_ASSOCIATION_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="YTB_RENDRA_ITEMType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NIM"/>
+                    <PropertyRef Name="ITEM"/>
+                </Key>
+                <Property Name="NIM" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label="NIM"/>
+                <Property Name="ITEM" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Item"/>
+                <Property Name="DESKRIPSI" Type="Edm.String" MaxLength="40" sap:label="Description"/>
+                <Property Name="DURASI" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Durasi"/>
+                <Property Name="OLEH" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By"/>
+                <Property Name="TANGGAL" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on"/>
+                <Property Name="PERUBAHAN" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On"/>
+            </EntityType>
+            <EntityType Name="ZRENDRA_001_ASSOCIATIONType" sap:label="CDS View" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="nim"/>
+                </Key>
+                <Property Name="nim" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label="NIM"/>
+                <Property Name="nama" Type="Edm.String" MaxLength="40" sap:label="Nama" sap:quickinfo="YTB nama"/>
+                <Property Name="oleh" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="Name of Person Responsible for Creating the Object"/>
+                <Property Name="tanggal" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on" sap:quickinfo="Date on which the record was created"/>
+                <Property Name="perubahan" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On" sap:quickinfo="Last Changed On"/>
+                <NavigationProperty Name="to_items" Relationship="ZRENDRA_001_ASSOCIATION_CDS.assoc_2D40B7DFCD5F8AF9C4CB5568136586B0" FromRole="FromRole_assoc_2D40B7DFCD5F8AF9C4CB5568136586B0" ToRole="ToRole_assoc_2D40B7DFCD5F8AF9C4CB5568136586B0"/>
+            </EntityType>
+            <Association Name="assoc_2D40B7DFCD5F8AF9C4CB5568136586B0" sap:content-version="1">
+                <End Type="ZRENDRA_001_ASSOCIATION_CDS.ZRENDRA_001_ASSOCIATIONType" Multiplicity="1" Role="FromRole_assoc_2D40B7DFCD5F8AF9C4CB5568136586B0"/>
+                <End Type="ZRENDRA_001_ASSOCIATION_CDS.YTB_RENDRA_ITEMType" Multiplicity="*" Role="ToRole_assoc_2D40B7DFCD5F8AF9C4CB5568136586B0"/>
+            </Association>
+            <EntityContainer Name="ZRENDRA_001_ASSOCIATION_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="YTB_RENDRA_ITEM" EntityType="ZRENDRA_001_ASSOCIATION_CDS.YTB_RENDRA_ITEMType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZRENDRA_001_ASSOCIATION" EntityType="ZRENDRA_001_ASSOCIATION_CDS.ZRENDRA_001_ASSOCIATIONType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_2D40B7DFCD5F8AF9C4CB5568136586B0" Association="ZRENDRA_001_ASSOCIATION_CDS.assoc_2D40B7DFCD5F8AF9C4CB5568136586B0" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZRENDRA_001_ASSOCIATION" Role="FromRole_assoc_2D40B7DFCD5F8AF9C4CB5568136586B0"/>
+                    <End EntitySet="YTB_RENDRA_ITEM" Role="ToRole_assoc_2D40B7DFCD5F8AF9C4CB5568136586B0"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="ZRENDRA_001_ASSOCIATION_CDS.ZRENDRA_001_ASSOCIATION_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <atom:link rel="self" href="https://S4DEMO.SOLTIUS.CO.ID:44370/sap/opu/odata/sap/ZRENDRA_001_ASSOCIATION_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://S4DEMO.SOLTIUS.CO.ID:44370/sap/opu/odata/sap/ZRENDRA_001_ASSOCIATION_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

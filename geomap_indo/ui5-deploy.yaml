@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: zgeomapindo
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://s4demo.soltius.co.id:44370
+          client: "710"
+        app:
+          name: ZT0001_RMAPS
+          description: Analytic Maps R
+          package: ZRIZKY_SAMPLES
+          transport: SDSK900449 #SOL_YOPPY    Learning Rendra
+        exclude:
+          - /test/

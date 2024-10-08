@@ -1,0 +1,314 @@
+{
+  "Regions": [
+    {
+      "county": "Indonesia",
+      "code": "8",
+      "birth2013": "30.0",
+      "birth2006": "20.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "ACEH"
+    },
+    {
+      "county": "Indonesia",
+      "code": "11",
+      "birth2013": "30.0",
+      "birth2006": "20.0",
+      "pos" : "97.16645741126122;4.259578511606011;0",
+      "tooltip": "ACEH"
+    },
+    {
+      "county": "Indonesia",
+      "code": "12",
+      "birth2013": "10.0",
+      "birth2006": "40.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "SUMATERA UTARA"
+    },
+    {
+      "county": "Indonesia",
+      "code": "13",
+      "birth2013": "90.0",
+      "birth2006": "30.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "SUMATERA BARAT"
+    },
+    {
+      "county": "Indonesia",
+      "code": "14",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "RIAU"
+    },
+    {
+      "county": "Indonesia",
+      "code": "15",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "JAMBI"
+    },
+    {
+      "county": "Indonesia",
+      "code": "16",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "SUMATERA SELATAN"
+    },
+    {
+      "county": "Indonesia",
+      "code": "17",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "BENGKULU"
+    },
+    {
+      "county": "Indonesia",
+      "code": "18",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "LAMPUNG"
+    },
+    {
+      "county": "Indonesia",
+      "code": "19",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "BANGKA BELITUNG"
+    },
+    {
+      "county": "Indonesia",
+      "code": "21",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "KEPULAUAN RIAU"
+    },
+    {
+      "county": "Indonesia",
+      "code": "32",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "Jawa Barat"
+    },
+    {
+      "county": "Indonesia",
+      "code": "33",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "JAWA TENGAH"
+    },
+    {
+      "county": "Indonesia",
+      "code": "34",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "DAERAH ISTIMEWA YOGYAKARTA"
+    },
+    {
+      "county": "Indonesia",
+      "code": "35",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "JAWA TIMUR"
+    },
+    {
+      "county": "Indonesia",
+      "code": "36",
+      "birth2013": "00.0",
+      "birth2006": "00.0",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "BANTEN"
+    },
+    {
+      "county": "Indonesia",
+      "code": "51",
+      "birth2013": "15.1",
+      "birth2006": "17.09",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "BALI"
+    },
+    {
+      "county": "Indonesia",
+      "code": "52",
+      "birth2013": "15.1",
+      "birth2006": "17.09",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "NUSA TENGGARA BARAT"
+    },
+    {
+      "county": "Indonesia",
+      "code": "53",
+      "birth2013": "15.1",
+      "birth2006": "17.09",
+      "pos" : "117.356862;-8.731257;0",
+      "tooltip": "NUSA TENGGARA TIMUR"
+    },
+    {
+      "county": "Indonesia",
+      "code": "64",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "KALIMANTAN TIMUR"
+    },
+    {
+      "county": "Indonesia",
+      "code": "61",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "KALIMANTAN BARAT"
+    },
+    {
+      "county": "Indonesia",
+      "code": "62",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "KALIMANTAN TENGAH"
+    },
+    {
+      "county": "Indonesia",
+      "code": "63",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "KALIMANTAN SELATAN"
+    },
+    {
+      "county": "Indonesia",
+      "code": "64",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "KALIMANTAN TIMUR"
+    },
+    {
+      "county": "Indonesia",
+      "code": "65",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "KALIMANTAN UTARA"
+    },
+    {
+      "county": "Indonesia",
+      "code": "71",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "SULAWESI UTARA"
+    },
+    {
+      "county": "Indonesia",
+      "code": "72",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "SULAWESI TENGAH"
+    },
+    {
+      "county": "Indonesia",
+      "code": "73",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "SULAWESI SELATAN"
+    },
+    {
+      "county": "Indonesia",
+      "code": "74",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "SULAWESI TENGGARA"
+    },
+    {
+      "county": "Indonesia",
+      "code": "75",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "GORONTALO"
+    },
+    {
+      "county": "Indonesia",
+      "code": "76",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "SULAWESI BARAT"
+    },
+    {
+      "county": "Indonesia",
+      "code": "81",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "MALUKU"
+    },
+    {
+      "county": "Indonesia",
+      "code": "82",
+      "birth2013": "20.1",
+      "birth2006": "5.09",
+      "pos" : "107.48874669454827;-6.777647094232616;0",
+      "tooltip": "MALUKU UTARA"
+    },
+    {
+      "county": "Indonesia",
+      "code": "31",
+      "birth2013": "18.1",
+      "birth2006": "32.09",
+      "pos" : "106.84460025183611;-6.209242757164515;0",
+      "tooltip": "JAKARTA"
+    },
+    {
+      "county": "Indonesia",
+      "code": "91",
+      "birth2013": "18.1",
+      "birth2006": "32.09",
+      "pos" : "106.84460025183611;-6.209242757164515;0",
+      "tooltip": "PAPUA"
+    },
+    {
+      "county": "Indonesia",
+      "code": "92",
+      "birth2013": "18.1",
+      "birth2006": "32.09",
+      "pos" : "106.84460025183611;-6.209242757164515;0",
+      "tooltip": "PAPUA BARAT"
+    }
+  ],
+  "Legend": [
+    {
+      "text": "No change",
+      "color": "rgb(171,219,242)"
+    },
+    {
+      "text": "1% - 4%",
+      "color": "rgb(132,202,236)"
+    },
+    {
+      "text": "5% - 9%",
+      "color": "rgb(92,186,229)"
+    },
+    {
+      "text": "10% - 14%",
+      "color": "rgb(39,163,221)"
+    },
+    {
+      "text": "15% or more decline",
+      "color": "rgb(27,126,172)"
+    }
+  ]
+}
