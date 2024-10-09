@@ -1,0 +1,47 @@
+<mvc:View controllerName="geomapindo2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:vb="sap.ui.vbm"
+    xmlns:vbm="sap.ui.vbm"
+    displayBlock="true">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <vbm:AnalyticMap id="_IDGenAnalyticMap"  width="100%" xmlns:l="sap.ui.layout"
+				height="100%" initialPosition="-98;30;0" initialZoom="4" 
+                regionClick="onRegionClick" regionContextMenu="onRegionContextMenu"
+				regions="">
+            </vbm:AnalyticMap>
+
+            <!-- <vbm:regions>
+                <vbm:Region id="_IDGenRegion" code="" color="" tooltip="" />
+            </vbm:regions> -->
+
+            <l:BlockLayout id="_IDGenBlockLayout" background="Dashboard" visible="true">
+                <l:content>
+                    <l:BlockLayoutRow id="_IDGenBlockLayoutRow" rowColorSet="ColorSet1" scrollable="false">
+                        <l:content>
+                            <l:BlockLayoutCell id="idCell1" width="1">
+                                <l:content>
+                                    <VBox>                                                                      
+                                        <Panel headerText="Middle center">
+                                            <FlexBox
+                                                height="100px"
+                                                alignItems="Center"
+                                                justifyContent="Center">
+                                                <Button text="1" type="Emphasized" class="sapUiSmallMarginEnd" />
+                                                <Button text="2" type="Reject" class="sapUiSmallMarginEnd" />
+                                                <Button text="3" type="Accept" />
+                                            </FlexBox>
+                                        </Panel>
+                                    </VBox>
+                                </l:content>
+                            </l:BlockLayoutCell>
+                        </l:content>
+                    </l:BlockLayoutRow>
+                </l:content>
+            </l:BlockLayout>
+            
+        </content>
+    </Page>
+</mvc:View>

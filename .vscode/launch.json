@@ -3,7 +3,6 @@
     {
       "name": "Chrome",
       "request": "launch",
-      //   "type": "pwa-chrome",
       "type": "chrome",
       "url": "http://localhost:8080/test/flpSandbox.html?sap-client=720&sap-ui-xx-viewCache=false#geomapindo-display",
       "webRoot": "${workspaceFolder}"
@@ -421,7 +420,6 @@
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npx",
-      //   "cwd": "${workspaceFolder}/geomap_indo/",
       "cwd": "${workspaceFolder}/geomap_indo/",
       "windows": {
         "runtimeExecutable": "npx.cmd"
@@ -432,9 +430,8 @@
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",
       "port": 8081,
-      "sourceMaps": true, // Add this line
+      "sourceMaps": true,
       "env": {
-        // "DEBUG": "--inspect",
         "DEBUG": "--inspect-brk",
         "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
       }
@@ -483,6 +480,74 @@
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",
       "port": 8081,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start geomap_indo2",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/geomap_indo2",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": ["--open", "test/flpSandbox.html#geomapindo2-display"],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start geomap_indo2 Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/geomap_indo2",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flpSandbox.html#geomapindo2-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start geomap_indo2 Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/geomap_indo2",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": ["fiori", "run"],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html#geomapindo2-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
       "env": {
         "FIORI_TOOLS_URL_PARAMS": "sap-client=720&sap-ui-xx-viewCache=false"
       }

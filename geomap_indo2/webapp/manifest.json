@@ -1,7 +1,7 @@
 {
-  "_version": "1.37.0",
+  "_version": "1.28.0",
   "sap.app": {
-    "id": "analyticss",
+    "id": "geomapindo2",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -12,17 +12,24 @@
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
-      "version": "1.13.5",
-      "toolsId": "45d5bf71-4c38-4b24-ac68-889d6aa9b806"
+      "version": "1.15.1",
+      "toolsId": "795c4360-8643-4de9-9b5d-4aab680876bd"
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZOFT_ANALYTICS_SRV/",
+        "uri": "/sap/opu/odata/sap/ZRENDRA_IDN_CDS/",
         "type": "OData",
         "settings": {
-          "annotations": [],
+          "annotations": ["ZRENDRA_IDN_CDS_VAN"],
           "localUri": "localService/metadata.xml",
           "odataVersion": "2.0"
+        }
+      },
+      "ZRENDRA_IDN_CDS_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZRENDRA_IDN_CDS_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/ZRENDRA_IDN_CDS_VAN.xml"
         }
       }
     }
@@ -44,19 +51,10 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": false,
+    "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.96.7",
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {},
-        "sap.f": {},
-        "sap.suite.ui.generic.template": {},
-        "sap.ui.comp": {},
-        "sap.ui.generic.app": {},
-        "sap.ui.table": {},
-        "sap.ushell": {}
-      }
+      "minUI5Version": "1.84.50",
+      "libs": {}
     },
     "contentDensities": {
       "compact": true,
@@ -66,7 +64,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "analyticss.i18n.i18n"
+          "bundleName": "geomapindo2.i18n.i18n"
         }
       },
       "": {
@@ -87,30 +85,30 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "analyticss.view",
+        "viewPath": "geomapindo2.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "RouteGeoMap",
-          "pattern": "",
-          "target": ["TargetGeoMap"]
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": ["TargetView1"]
         }
       ],
       "targets": {
-        "TargetGeoMap": {
+        "TargetView1": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "GeoMap",
-          "viewName": "GeoMap"
+          "viewId": "View1",
+          "viewName": "View1"
         }
       }
     },
     "rootView": {
-      "viewName": "analyticss.view.App",
+      "viewName": "geomapindo2.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
