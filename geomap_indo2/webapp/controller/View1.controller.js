@@ -6,6 +6,8 @@ sap.ui.define(
     "sap/ui/vbm/AnalyticMap",
     "sap/ui/vbm/Spot",
     "sap/m/MessageToast",
+    "sap/suite/ui/microchart/InteractiveBarChart",
+    "sap/suite/ui/microchart/InteractiveBarChartBar",
   ],
   function (
     Controller,
@@ -13,7 +15,9 @@ sap.ui.define(
     ChartContainerContent,
     AnalyticMap,
     Spot,
-    MessageToast
+    MessageToast,
+    InteractiveBarChart,
+    InteractiveBarChartBar
   ) {
     "use strict";
 
@@ -26,6 +30,21 @@ sap.ui.define(
         this.getOwnerComponent()
           .getRouter()
           .attachRoutePatternMatched(this.generateSpot, this);
+      },
+
+      // Fungsi press untuk chart
+      press: function (oEvent) {
+        MessageToast.show("The interactive bar chart is pressed.");
+      },
+
+      selectionChanged: function (oEvent) {
+        var oBar = oEvent.getParameter("bar");
+        MessageToast.show(
+          "The selection changed: " +
+            oBar.getLabel() +
+            " " +
+            (oBar.getSelected() ? "selected" : "deselected")
+        );
       },
     });
   }

@@ -23,15 +23,15 @@
                         <l:content>
                             <l:BlockLayoutCell id="idCell1" width="1">
                                 <l:content>
-                                    <VBox>                                                                      
-                                        <Panel headerText="Middle center">
-                                            <FlexBox
+                                    <VBox id="_IDGenVBox1">                                                                      
+                                        <Panel id="_IDGenPanel" headerText="Middle center">
+                                            <FlexBox id="_IDGenFlexBox"
                                                 height="100px"
                                                 alignItems="Center"
                                                 justifyContent="Center">
-                                                <Button text="1" type="Emphasized" class="sapUiSmallMarginEnd" />
-                                                <Button text="2" type="Reject" class="sapUiSmallMarginEnd" />
-                                                <Button text="3" type="Accept" />
+                                                <Button id="_IDGenButton" text="1" type="Emphasized" class="sapUiSmallMarginEnd" />
+                                                <Button id="_IDGenButton1" text="2" type="Reject" class="sapUiSmallMarginEnd" />
+                                                <Button id="_IDGenButton2" text="3" type="Accept" />
                                             </FlexBox>
                                         </Panel>
                                     </VBox>
