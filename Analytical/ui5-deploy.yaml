@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: analyticss
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://s4demo.soltius.co.id:44370
+          client: "720"
+        app:
+          name: ZANALYTICS_MAP
+          description: Analytical Maps
+          package: ZRIZAL_LEARNING
+          transport: SDSK900479
+        exclude:
+          - /test/
