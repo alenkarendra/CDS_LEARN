@@ -8,45 +8,74 @@
     xmlns="sap.m"
     xmlns:vbm="sap.ui.vbm"
 	xmlns:commons="sap.ui.commons">
-	<l:FixFlex id="_IDGenFixFlex" class="fixFlexFixedSize">
-        <l:flexContent>
-			<vbm:AnalyticMap id="vbi" width="100%" xmlns:l="sap.ui.layout"
-				height="100%" initialPosition="118.3701629292688;-3.072095646893412;0" initialZoom="5" regions="{productModel>/products}" regionClick="onRegionClick">
-            	<vbm:regions>
-					<vbm:Region id="_IDGenRegion" code="{productModel>id_code}" color="{productModel>color}" tooltip="{productModel>tooltip}"/>
-				</vbm:regions>
-                <vbm:vos>
-                    <!-- <vbm:Spots items="{productModel>/products}">
-                        <vbm:Spot position="{productModel>pos}" tooltip="{productModel>tooltip}" type="{productModel>type}">
-                        	<vbm:tooltip>
-							</vbm:tooltip>
-                        </vbm:Spot>
-                    </vbm:Spots> -->
-                    <vbm:Spots id="_IDGenSpots" items="{productModel>/products}" click="onClickItem" contextMenu="onContextMenuItem">
-                        <vbm:Spot id="idSpot" 
-                            position="{productModel>pos}" 
-                            tooltip="{productModel>tooltip}" 
-                            text="{productModel>tooltip}" 
-                            type="{productModel>type}"
-                            click="onSpotClick">
-                        </vbm:Spot>
-                    </vbm:Spots>
-                </vbm:vos>
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <l:FixFlex id="_IDGenFixFlex" class="fixFlexFixedSize">
+                <l:flexContent>
+                    <vbm:AnalyticMap id="vbi" width="100%" xmlns:l="sap.ui.layout"
+                        height="100%" initialPosition="118.3701629292688;-3.072095646893412;0" initialZoom="5" regions="{productModel>/products}" regionClick="onRegionClick">
+                        <vbm:regions>
+                            <vbm:Region id="_IDGenRegion" code="{productModel>id_code}" color="{productModel>color}" tooltip="{productModel>tooltip}"/>
+                        </vbm:regions>
+                        <vbm:vos>
+                            <!-- <vbm:Spots items="{productModel>/products}">
+                                <vbm:Spot position="{productModel>pos}" tooltip="{productModel>tooltip}" type="{productModel>type}">
+                                    <vbm:tooltip>
+                                    </vbm:tooltip>
+                                </vbm:Spot>
+                            </vbm:Spots> -->
+                            <vbm:Spots id="_IDGenSpots" items="{productModel>/products}" click="onClickItem" contextMenu="onContextMenuItem">
+                                <vbm:Spot id="idSpot" 
+                                    position="{productModel>pos}" 
+                                    tooltip="{productModel>tooltip}" 
+                                    text="{productModel>tooltip}" 
+                                    type="{productModel>type}"
+                                    click="onSpotClick">
+                                </vbm:Spot>
+                            </vbm:Spots>
+                        </vbm:vos>
 
-                <vbm:legend>
-                    <vbm:Legend id="legend" caption="Sales Penjualan"
-                    items="{productModel>/legends}">
-                        <vbm:LegendItem id="_IDGenLegendItem" text="{productModel>text}" color="{productModel>color}"/>
-                    </vbm:Legend>
-                </vbm:legend>
+                        <vbm:legend>
+                            <vbm:Legend id="legend" caption="Sales Penjualan"
+                            items="{productModel>/legends}">
+                                <vbm:LegendItem id="_IDGenLegendItem" text="{productModel>text}" color="{productModel>color}"/>
+                            </vbm:Legend>
+                        </vbm:legend>
 
-                <!-- <vbm:legend>
-					<vbm:Legend id="legend" caption="Sales Penjualan">
-						<vbm:LegendItem id="_IDGenLegendItem" text="Low" color="{productModel>color}"/>
-					</vbm:Legend>
-				</vbm:legend> -->
+                        <!-- <vbm:legend>
+                            <vbm:Legend id="legend" caption="Sales Penjualan">
+                                <vbm:LegendItem id="_IDGenLegendItem" text="Low" color="{productModel>color}"/>
+                            </vbm:Legend>
+                        </vbm:legend> -->
 
-            </vbm:AnalyticMap>
-		</l:flexContent>
-	</l:FixFlex>
+                    </vbm:AnalyticMap>
+                </l:flexContent>
+            </l:FixFlex>
+
+            <l:BlockLayout id="_IDGenBlockLayout" background="Dashboard" visible="true">
+                <l:content>
+                    <l:BlockLayoutRow id="_IDGenBlockLayoutRow" rowColorSet="ColorSet1" scrollable="false">
+                        <l:content>
+                            <l:BlockLayoutCell id="idCell1" width="1">
+                                <l:content>
+                                    <VBox id="_IDGenVBox">                                                                      
+                                        <Panel id="_IDGenPanel" headerText="Middle center">
+                                            <FlexBox id="_IDGenFlexBox1"
+                                                height="100px"
+                                                alignItems="Center"
+                                                justifyContent="Center">
+                                                <Button id="_IDGenButton" text="1" type="Emphasized" class="sapUiSmallMarginEnd" />
+                                                <Button id="_IDGenButton1" text="2" type="Reject" class="sapUiSmallMarginEnd" />
+                                                <Button id="_IDGenButton2" text="3" type="Accept" />
+                                            </FlexBox>
+                                        </Panel>
+                                    </VBox>
+                                </l:content>
+                            </l:BlockLayoutCell>
+                        </l:content>
+                    </l:BlockLayoutRow>
+                </l:content>
+            </l:BlockLayout>
+        </content>
+    </Page>
 </mvc:View>
