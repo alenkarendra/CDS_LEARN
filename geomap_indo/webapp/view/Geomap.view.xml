@@ -9,15 +9,18 @@
     xmlns:vbm="sap.ui.vbm"
     xmlns:mchart = "sap.suite.ui.microchart"
 	xmlns:commons="sap.ui.commons"
-    
+
+    xmlns:uxap="sap.uxap"
     xmlns:f="sap.ui.layout.form"
+
     xmlns:trm="sap.ui.table.rowmodes"
     xmlns:t="sap.ui.table">
     
     <!-- xmlns:smartForm="sap.ui.comp.smartform"
 	xmlns:smartField="sap.ui.comp.smartfield"
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" -->
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="{i18n>title}" enableScrolling="true" showNavButton="true" showSubHeader="true" titleAlignment="Center" >
+
         <content>
             <l:FixFlex id="_IDGenFixFlex" class="fixFlexFixedSize">
                 <l:flexContent>
@@ -85,24 +88,45 @@
                                                 <mchart:InteractiveBarChart id="_IDGenInteractiveBarChart" labelWidth="25%" displayedBars="3" selectionChanged="selectionChanged" press="press">
                                                     <mchart:bars>
                                                         <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar" label="Penjualan Tertinggi" value="{productModel>/sales/highest}" displayedValue="{productModel>/sales/Dhighest}" color="Good"/>
-                                                        <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar1" label="Penjualan Rata-rata" value="{productModel>/sales/average}" displayedValue="{productModel>/sales/Daverage}" color="Critical" />
+                                                        <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar1" label="Penjualan Rata-rata" value="{productModel>/sales/average}" displayedValue="{productModel>/sales/Daverage}" color="Critical" class="customBar" />
                                                         <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar2" label="Penjualan Terendah" value="{productModel>/sales/lowest}" displayedValue="{productModel>/sales/Dlowest}" color="Error"/>
                                                     </mchart:bars>
                                                 </mchart:InteractiveBarChart>
                                             </FlexBox>
 
-                                            <FlexBox id="_IDGenFlexBox3"
+                                            <!-- <FlexBox id="_IDGenFlexBox3"
                                                 height="100%"
                                                 alignItems="Start"
                                                 justifyContent="Start">
                                                 <List id="_IDGenList">
                                                     <StandardListItem id="_IDGenStandardListItem" title='Penjualan Tertinggi adalah Kota : {productModel>/sales/cityHighest}' type="Active"/>
                                                     <StandardListItem id="_IDGenStandardListItem1" title="Penjualan Terendah adalah Kota : {productModel>/sales/cityLowest}"  type="Active"/>
-                                                </List>
+                                                </List>                                                
+                                            </FlexBox> -->
 
+                                        <VBox id="_IDGenVBox1">
+                                            <f:SimpleForm id="_IDGenSimpleForm1"
+                                                title="Summary"
+                                                editable="true"
+                                                layout="ColumnLayout">
+
+                                                <Label id="_IDGenLabel" textAlign="Begin" text="Penjualan Tertinggi adalah Kota " />
+                                                <Text id="_IDGenText" text="{productModel>/sales/cityHighest}"/>
+
+                                                <Label id="_IDGenLabel1" textAlign="Begin" text="Penjualan Terendah adalah Kota "/>
+                                                <Text id="_IDGenText1" text="{productModel>/sales/cityLowest}" />
+                                            </f:SimpleForm>
+                                        </VBox>
+
+                                        <VBox id="_IDGenVBox2" alignContent="Center" alignItems="End">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                                                </svg>
+                                                <Link id="_IDGenLink"
+                                                text="©️ Source Code"
                                                 
-                                            </FlexBox>
-
+                                                href="https://github.com/alenkarendra/CDS_LEARN/tree/main/geomap_indo"/>
+                                        </VBox>
 
                                         </Panel>
                                     </VBox>

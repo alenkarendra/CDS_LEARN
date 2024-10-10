@@ -4,3 +4,7 @@
   background-color: rgb(13, 2, 168) !important; /* Change to desired color */
   color: black;
 }
+
+.customBar {
+  background-color: #ff0000; /* Mengubah warna menjadi merah */
+}

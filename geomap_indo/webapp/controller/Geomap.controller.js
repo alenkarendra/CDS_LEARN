@@ -51,15 +51,15 @@ sap.ui.define(
         var Legend = [
           {
             text: "High Sales",
-            color: "rgb(43,125,43)",
+            color: "rgb(152, 216, 170)",
           },
           {
             text: "Medium Sales",
-            color: "rgb(231,140,7)",
+            color: "rgb(247, 208, 96)",
           },
           {
             text: "Low Sales",
-            color: "rgb(187,0,0)",
+            color: "rgb(255, 109, 96)",
           },
         ];
 
@@ -119,16 +119,16 @@ sap.ui.define(
 
               // Menggunakan threshold dinamis berdasarkan persentase nilai maksimum
               if (aDataArray[i].sales >= highSalesThreshold) {
-                color = "rgb(196, 218, 210)";
+                color = "rgb(152, 216, 170)";
                 type = "Success";
               } else if (
                 aDataArray[i].sales >= mediumSalesThreshold &&
                 aDataArray[i].sales < highSalesThreshold
               ) {
-                color = "rgb(106, 156, 137)";
+                color = "rgb(247, 208, 96)";
                 type = "Warning";
               } else {
-                color = "rgb(22, 66, 60)";
+                color = "rgb(255, 109, 96)";
                 type = "Error";
               }
 
