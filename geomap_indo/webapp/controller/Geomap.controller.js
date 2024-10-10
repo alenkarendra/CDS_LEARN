@@ -176,11 +176,11 @@ sap.ui.define(
 
             // oUpdatedModel.setProperty("/sales", salesData);
 
-            debugger;
+            // debugger;
 
-            console.log(this.getView().getModel("productModel").getData());
+            // console.log(this.getView().getModel("productModel").getData());
 
-            console.log(salesData);
+            // console.log(salesData);
           },
           error: (oError) => {
             // Menggunakan arrow function
@@ -199,6 +199,8 @@ sap.ui.define(
         let totalSales = 0;
         let idHighest = 0;
         let idLowest = 0;
+        let cityHighest;
+        let cityLowest;
 
         var penjualanTertinggi = salesData[0].sales;
         var penjualanTerendah = salesData[0].sales;
@@ -212,10 +214,12 @@ sap.ui.define(
           if (item.sales > penjualanTerendah) {
             penjualanTertinggi = item.sales;
             idHighest = item.id_code;
+            cityHighest = item.city;
           }
           if (item.sales < penjualanTerendah) {
             penjualanTerendah = item.sales;
             idLowest = item.id_code;
+            cityLowest = item.city;
           }
         });
 
@@ -226,6 +230,8 @@ sap.ui.define(
         return {
           idHighest: idHighest,
           idLowest: idLowest,
+          cityHighest: cityHighest,
+          cityLowest: cityLowest,
           average: parseFloat(averageSales),
           highest: parseFloat(penjualanTertinggi),
           lowest: parseFloat(penjualanTerendah),

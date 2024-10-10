@@ -8,7 +8,15 @@
     xmlns="sap.m"
     xmlns:vbm="sap.ui.vbm"
     xmlns:mchart = "sap.suite.ui.microchart"
-	xmlns:commons="sap.ui.commons">
+	xmlns:commons="sap.ui.commons"
+    
+    xmlns:f="sap.ui.layout.form"
+    xmlns:trm="sap.ui.table.rowmodes"
+    xmlns:t="sap.ui.table">
+    
+    <!-- xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" -->
     <Page id="page" title="{i18n>title}">
         <content>
             <l:FixFlex id="_IDGenFixFlex" class="fixFlexFixedSize">
@@ -82,6 +90,20 @@
                                                     </mchart:bars>
                                                 </mchart:InteractiveBarChart>
                                             </FlexBox>
+
+                                            <FlexBox id="_IDGenFlexBox3"
+                                                height="100%"
+                                                alignItems="Start"
+                                                justifyContent="Start">
+                                                <List id="_IDGenList">
+                                                    <StandardListItem id="_IDGenStandardListItem" title='Penjualan Tertinggi adalah Kota : {productModel>/sales/cityHighest}' type="Active"/>
+                                                    <StandardListItem id="_IDGenStandardListItem1" title="Penjualan Terendah adalah Kota : {productModel>/sales/cityLowest}"  type="Active"/>
+                                                </List>
+
+                                                
+                                            </FlexBox>
+
+
                                         </Panel>
                                     </VBox>
                                 </l:content>
