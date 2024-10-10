@@ -143,8 +143,8 @@ sap.ui.define(
               oUpdatedModel.setProperty("/legends", Isi);
 
               // Set array data ke model
-              var oModel = new sap.ui.model.json.JSONModel();
-              oModel.setData({ products: Isi, legends: Legend });
+              // var oModel = new sap.ui.model.json.JSONModel();
+              // oModel.setData({ products: Isi, legends: Legend });
 
               // Mengikat model ke view
               that.getView().setModel(oModel, "productModel");
@@ -158,9 +158,29 @@ sap.ui.define(
             // // Set array data ke model
             // var oModel = new sap.ui.model.json.JSONModel();
             // oModel.setData({ products: Isi });
-
             // // Mengikat model ke view
             // that.getView().setModel(oModel, "productModel");
+
+            var salesData = that.calculatedSalesData(Isi);
+
+            // Set array data ke model
+            var oModel = new sap.ui.model.json.JSONModel();
+            oModel.setData({
+              products: Isi,
+              legends: Legend,
+              sales: salesData,
+            });
+
+            // Mengikat model ke view
+            that.getView().setModel(oModel, "productModel");
+
+            // oUpdatedModel.setProperty("/sales", salesData);
+
+            debugger;
+
+            console.log(this.getView().getModel("productModel").getData());
+
+            console.log(salesData);
           },
           error: (oError) => {
             // Menggunakan arrow function
@@ -169,13 +189,59 @@ sap.ui.define(
         });
       },
 
+      calculatedSalesData: function (salesData) {
+        // debugger;
+        if (!salesData || salesData.length === 0) {
+          MessageToast.show("Tidak ada data penjualan");
+          return;
+        }
+
+        let totalSales = 0;
+        let idHighest = 0;
+        let idLowest = 0;
+
+        var penjualanTertinggi = salesData[0].sales;
+        var penjualanTerendah = salesData[0].sales;
+
+        // Loop untuk menghitung total, penjualan tertinggi, dan terendah
+        salesData.forEach(function (item) {
+          var sales = parseInt(item.sales);
+          totalSales += sales;
+          // debugger;
+
+          if (item.sales > penjualanTerendah) {
+            penjualanTertinggi = item.sales;
+            idHighest = item.id_code;
+          }
+          if (item.sales < penjualanTerendah) {
+            penjualanTerendah = item.sales;
+            idLowest = item.id_code;
+          }
+        });
+
+        var averageSales = totalSales / salesData.length;
+
+        // let formattedSales = Number(item.sales).toLocaleString("id-ID");
+
+        return {
+          idHighest: idHighest,
+          idLowest: idLowest,
+          average: parseFloat(averageSales),
+          highest: parseFloat(penjualanTertinggi),
+          lowest: parseFloat(penjualanTerendah),
+          //Variable to Display
+          Daverage: Number(Math.round(averageSales)).toLocaleString("id-ID"),
+          Dhighest: Number(penjualanTertinggi).toLocaleString("id-ID"),
+          Dlowest: Number(penjualanTerendah).toLocaleString("id-ID"),
+        };
+      },
+
       onRegionClick: function (e) {
         let DataDetail = [];
         let DataCode = "";
 
         let JsonDunia = [];
 
-        // debugger;
         var tes = 0;
         tes = this.tesLemparVarKeluar(1, 2);
 

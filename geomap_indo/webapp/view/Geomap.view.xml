@@ -7,6 +7,7 @@
     displayBlock="true"
     xmlns="sap.m"
     xmlns:vbm="sap.ui.vbm"
+    xmlns:mchart = "sap.suite.ui.microchart"
 	xmlns:commons="sap.ui.commons">
     <Page id="page" title="{i18n>title}">
         <content>
@@ -59,14 +60,27 @@
                             <l:BlockLayoutCell id="idCell1" width="1">
                                 <l:content>
                                     <VBox id="_IDGenVBox">                                                                      
-                                        <Panel id="_IDGenPanel" headerText="Middle center">
-                                            <FlexBox id="_IDGenFlexBox1"
+                                        <Panel id="_IDGenPanel" headerText="Data Penjualan">
+                                            <!-- <FlexBox id="_IDGenFlexBox1"
                                                 height="100px"
                                                 alignItems="Center"
                                                 justifyContent="Center">
                                                 <Button id="_IDGenButton" text="1" type="Emphasized" class="sapUiSmallMarginEnd" />
                                                 <Button id="_IDGenButton1" text="2" type="Reject" class="sapUiSmallMarginEnd" />
                                                 <Button id="_IDGenButton2" text="3" type="Accept" />
+                                            </FlexBox> -->
+
+                                            <FlexBox id="_IDGenFlexBox2"
+                                                height="100%"
+                                                alignItems="Center"
+                                                justifyContent="Center">
+                                                <mchart:InteractiveBarChart id="_IDGenInteractiveBarChart" labelWidth="25%" displayedBars="3" selectionChanged="selectionChanged" press="press">
+                                                    <mchart:bars>
+                                                        <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar" label="Penjualan Tertinggi" value="{productModel>/sales/highest}" displayedValue="{productModel>/sales/Dhighest}" color="Good"/>
+                                                        <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar1" label="Penjualan Rata-rata" value="{productModel>/sales/average}" displayedValue="{productModel>/sales/Daverage}" color="Critical" />
+                                                        <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar2" label="Penjualan Terendah" value="{productModel>/sales/lowest}" displayedValue="{productModel>/sales/Dlowest}" color="Error"/>
+                                                    </mchart:bars>
+                                                </mchart:InteractiveBarChart>
                                             </FlexBox>
                                         </Panel>
                                     </VBox>

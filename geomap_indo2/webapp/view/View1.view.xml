@@ -4,6 +4,7 @@
     xmlns:l="sap.ui.layout"
     xmlns:vb="sap.ui.vbm"
     xmlns:vbm="sap.ui.vbm"
+    xmlns:mchart = "sap.suite.ui.microchart"
     displayBlock="true">
     <Page id="page" title="{i18n>title}">
         <content>
@@ -13,18 +14,14 @@
 				regions="">
             </vbm:AnalyticMap>
 
-            <!-- <vbm:regions>
-                <vbm:Region id="_IDGenRegion" code="" color="" tooltip="" />
-            </vbm:regions> -->
-
             <l:BlockLayout id="_IDGenBlockLayout" background="Dashboard" visible="true">
                 <l:content>
                     <l:BlockLayoutRow id="_IDGenBlockLayoutRow" rowColorSet="ColorSet1" scrollable="false">
                         <l:content>
-                            <l:BlockLayoutCell id="idCell1" width="1">
+                            <l:BlockLayoutCell id="idCell1" width="100%">
                                 <l:content>
-                                    <VBox id="_IDGenVBox1">                                                                      
-                                        <Panel id="_IDGenPanel" headerText="Middle center">
+                                    <VBox id="_IDGenVBox1" fitContainer="true">                                                                      
+                                        <Panel id="_IDGenPanel" headerText="Data Penjualan">
                                             <FlexBox id="_IDGenFlexBox"
                                                 height="100px"
                                                 alignItems="Center"
@@ -32,6 +29,21 @@
                                                 <Button id="_IDGenButton" text="1" type="Emphasized" class="sapUiSmallMarginEnd" />
                                                 <Button id="_IDGenButton1" text="2" type="Reject" class="sapUiSmallMarginEnd" />
                                                 <Button id="_IDGenButton2" text="3" type="Accept" />
+                                            </FlexBox>
+
+
+                                            <FlexBox id="_IDGenFlexBox2"
+                                                height="100%"
+                                                alignItems="Center"
+                                                justifyContent="Center"
+                                            >
+                                            <mchart:InteractiveBarChart id="_IDGenInteractiveBarChart" labelWidth="25%" displayedBars="3" selectionChanged="selectionChanged" press="press">
+                                                <mchart:bars>
+                                                    <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar" label="Product 1" value="10" color="Critical"/>
+                                                    <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar1" label="Product 2" value="50" color="Good" />
+                                                    <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar2" label="Product 3" value="-10" color="Error"/>
+                                                </mchart:bars>
+                                            </mchart:InteractiveBarChart>
                                             </FlexBox>
                                         </Panel>
                                     </VBox>
@@ -41,6 +53,26 @@
                     </l:BlockLayoutRow>
                 </l:content>
             </l:BlockLayout>
+
+            <!-- <l:Grid id="_IDGenGrid" defaultSpan="XL6 L6 M6 S12">
+                <l:VerticalLayout id="_IDGenVerticalLayout1">
+                    <l:layoutData>
+                        <l:GridData id="_IDGenGridData" span="XL12 L12 M12 S12"/>
+                    </l:layoutData> -->
+                    <!-- <mchart:Text id="_IDGenText" text="Semantic colors in interactive mode" class="sapUiSmallMargin"/> -->
+                    <!-- <mchart:FlexBox id="_IDGenFlexBox1" width="20rem" height="13rem" alignItems="Center" class="sapUiSmallMargin"> -->
+                        <!-- <mchart:items> -->
+                            <!-- <mchart:InteractiveBarChart id="_IDGenInteractiveBarChart" labelWidth="25%" displayedBars="3" selectionChanged="selectionChanged" press="press">
+                                <mchart:bars>
+                                    <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar" label="Product 1" value="10" color="Critical"/>
+                                    <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar1" label="Product 2" value="50" color="Good" selected="true"/>
+                                    <mchart:InteractiveBarChartBar id="_IDGenInteractiveBarChartBar2" label="Product 3" value="-10" color="Error"/>
+                                </mchart:bars>
+                            </mchart:InteractiveBarChart> -->
+                        <!-- </mchart:items> -->
+                    <!-- </mchart:FlexBox> -->
+                <!-- </l:VerticalLayout>
+            </l:Grid> -->
             
         </content>
     </Page>

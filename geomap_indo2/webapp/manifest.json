@@ -54,7 +54,10 @@
     "flexEnabled": true,
     "dependencies": {
       "minUI5Version": "1.84.50",
-      "libs": {}
+      "libs": {
+        "sap.suite.ui.microchart": {},
+        "sap.ui.layout": {}
+      }
     },
     "contentDensities": {
       "compact": true,
