@@ -124,7 +124,7 @@
                                                 </svg>
                                                 <Link id="_IDGenLink"
                                                 text="©️ Source Code"
-                                                
+                                                target="_blank"
                                                 href="https://github.com/alenkarendra/CDS_LEARN/tree/main/geomap_indo"/>
                                         </VBox>
 

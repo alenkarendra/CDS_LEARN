@@ -11,6 +11,8 @@ sap.ui.define(
     "sap/m/Popover",
     "sap/m/Bar",
     "sap/ui/core/Fragment",
+    "sap/ui/core/library",
+    "sap/m/library",
   ],
   function (
     AnalyticMap,
@@ -23,7 +25,9 @@ sap.ui.define(
     Text,
     Popover,
     Bar,
-    Fragment
+    Fragment,
+    coreLibrary,
+    mobileLibrary
   ) {
     "use strict";
 
@@ -31,6 +35,13 @@ sap.ui.define(
     AnalyticMap.GeoJSONURL =
       "https://alenkarendra.github.io/idngeojson/idngeojson.json";
     let Isi = [];
+
+    // shortcut for sap.m.ButtonType
+    var ButtonType = mobileLibrary.ButtonType;
+    // shortcut for sap.m.DialogType
+    var DialogType = mobileLibrary.DialogType;
+    // shortcut for sap.ui.core.ValueState
+    var ValueState = coreLibrary.ValueState;
 
     return Controller.extend("geomapindo.controller.Geomap", {
       onInit: function () {
@@ -394,9 +405,12 @@ sap.ui.define(
 
         if (!this._oDialog) {
           this._oDialog = new Dialog({
+            type: DialogType.Message,
             title: tittle,
+            // state: ValueState.Information,
             content: new Text({ text: text }),
             beginButton: new Button({
+              type: ButtonType.Emphasized,
               text: "Close",
               press: function () {
                 this._oDialog.close();
