@@ -187,8 +187,6 @@ sap.ui.define(
 
             // oUpdatedModel.setProperty("/sales", salesData);
 
-            debugger;
-
             // console.log(this.getView().getModel("productModel").getData());
 
             // console.log(salesData);
@@ -201,7 +199,7 @@ sap.ui.define(
       },
 
       calculatedSalesData: function (salesData) {
-        debugger;
+        // debugger;
         if (!salesData || salesData.length === 0) {
           MessageToast.show("Tidak ada data penjualan");
           return;
@@ -220,7 +218,7 @@ sap.ui.define(
         salesData.forEach(function (item) {
           var sales = parseInt(item.sales);
           totalSales += sales;
-          debugger;
+          // debugger;
 
           if (item.sales > penjualanTerendah) {
             penjualanTertinggi = item.sales;
@@ -423,6 +421,22 @@ sap.ui.define(
         this._oDialog.getContent()[0].setText(text); // Update the content text
         this._oDialog.open();
       },
+
+      onPressClick: function () {
+        var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+        oRouter.navTo("RouteNewView");
+      },
+
+      // navButtonPress: function () {
+      //   // // Option 1: Use router to navigate to a specific route
+      //   // var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+      //   // oRouter.navTo("RouteGeomap");
+      //   // Option 2: Go back in browser history
+      //   // window.history.go(-1);
+
+      //   var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+      //   oRouter.navTo("RouteNewView");
+      // },
     });
   }
 );

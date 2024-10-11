@@ -98,6 +98,11 @@
           "name": "RouteGeomap",
           "pattern": ":?query:",
           "target": ["TargetGeomap"]
+        },
+        {
+          "name": "RouteNewView",
+          "pattern": "newview",
+          "target": ["TargetNewView"]
         }
       ],
       "targets": {
@@ -107,6 +112,13 @@
           "clearControlAggregation": false,
           "viewId": "Geomap",
           "viewName": "Geomap"
+        },
+        "TargetNewView": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "NewView",
+          "viewName": "NewView"
         }
       }
     },

@@ -19,7 +19,7 @@
     <!-- xmlns:smartForm="sap.ui.comp.smartform"
 	xmlns:smartField="sap.ui.comp.smartfield"
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" -->
-    <Page id="page" title="{i18n>title}" enableScrolling="true" showNavButton="true" showSubHeader="true" titleAlignment="Center" >
+    <Page id="page" title="{i18n>title}" enableScrolling="true" showNavButton="false" showSubHeader="true" titleAlignment="Center" >
 
         <content>
             <l:FixFlex id="_IDGenFixFlex" class="fixFlexFixedSize">
@@ -121,6 +121,8 @@
                                                     <ObjectNumber id="_IDGenObjectNumber2" state="Error" number="{productModel>/sales/Dlowest}" unit="IDR"/>
                                             </f:SimpleForm>
                                         </VBox>
+
+                                        <Button icon="" id="_IDGenButton" text="New View" press="onPressClick"/>
 
                                         <VBox id="_IDGenVBox2" alignContent="Center" alignItems="End">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
