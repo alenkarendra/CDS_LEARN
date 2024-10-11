@@ -187,7 +187,7 @@ sap.ui.define(
 
             // oUpdatedModel.setProperty("/sales", salesData);
 
-            // debugger;
+            debugger;
 
             // console.log(this.getView().getModel("productModel").getData());
 
@@ -201,7 +201,7 @@ sap.ui.define(
       },
 
       calculatedSalesData: function (salesData) {
-        // debugger;
+        debugger;
         if (!salesData || salesData.length === 0) {
           MessageToast.show("Tidak ada data penjualan");
           return;
@@ -220,7 +220,7 @@ sap.ui.define(
         salesData.forEach(function (item) {
           var sales = parseInt(item.sales);
           totalSales += sales;
-          // debugger;
+          debugger;
 
           if (item.sales > penjualanTerendah) {
             penjualanTertinggi = item.sales;
@@ -319,7 +319,6 @@ sap.ui.define(
 
       loadGeoJsonData: function () {
         let geoJsonArray = [];
-        let tes = [];
 
         // Fetch the GeoJSON data from the URL
         fetch(AnalyticMap.GeoJSONURL)

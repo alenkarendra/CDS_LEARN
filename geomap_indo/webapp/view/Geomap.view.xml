@@ -104,17 +104,21 @@
                                                 </List>                                                
                                             </FlexBox> -->
 
-                                        <VBox id="_IDGenVBox1">
-                                            <f:SimpleForm id="_IDGenSimpleForm1"
+                                        <VBox id="_IDGenVBox1" fitContainer="true" width="100%">
+                                            <f:SimpleForm id="_IDGenSimpleForm1" minWidth="25%"
                                                 title="Summary"
                                                 editable="true"
                                                 layout="ColumnLayout">
 
-                                                <Label id="_IDGenLabel" textAlign="Begin" text="Penjualan Tertinggi adalah Kota " />
-                                                <Text id="_IDGenText" text="{productModel>/sales/cityHighest}"/>
+                                                <Label id="_IDGenLabel" textAlign="Begin" text="Penjualan Tertinggi adalah Provinsi " />
+                                                <!-- <HBox> -->
+                                                <Text id="_IDGenText" text="{productModel>/sales/cityHighest}" textAlign="Center" />
+                                                    <ObjectNumber id="_IDGenObjectNumber1" state="Success" number="{productModel>/sales/Dhighest}" unit="IDR" textAlign="Begin" emphasized="true"/> 
+                                                <!-- </HBox> -->
 
-                                                <Label id="_IDGenLabel1" textAlign="Begin" text="Penjualan Terendah adalah Kota "/>
-                                                <Text id="_IDGenText1" text="{productModel>/sales/cityLowest}" />
+                                                <Label id="_IDGenLabel1" textAlign="Begin" text="Penjualan Terendah adalah Provinsi "/>
+                                                <Text id="_IDGenText1" text="{productModel>/sales/cityLowest}" textAlign="Center"/>
+                                                    <ObjectNumber id="_IDGenObjectNumber2" state="Error" number="{productModel>/sales/Dlowest}" unit="IDR"/>
                                             </f:SimpleForm>
                                         </VBox>
 
