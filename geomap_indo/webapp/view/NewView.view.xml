@@ -1,13 +1,9 @@
-<mvc:View
-    controllerName="geomapindo.controller.NewView"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="_IDGenPage1" title="New View">
-        <content>
-
-            <Button id="_IDGenButton1" text="Back" press="onBackPress" />
-            <Text id="_IDGenText2" text="Welcome to the new view!" />
-            
-        </content>
-    </Page>
+<mvc:View controllerName="geomapindo.controller.NewView" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m">
+	<Page id="_IDGenPage1" title="New View" showNavButton="true" navButtonPress="onBackPress" navButtonTooltip="Back">
+		<content>
+			<Text id="_IDGenText2" text="Welcome to the new view!" />
+		</content>
+	</Page>
 </mvc:View>
