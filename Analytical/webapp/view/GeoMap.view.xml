@@ -87,7 +87,7 @@
                         <l:content>
                             <l:BlockLayoutCell id="idCell3" width="1">
                                 <l:content>
-                                    <viz:VizFrame id="idVizFrame3" uiConfig="{applicationSet :'fiori'}" vizType="pie" vizProperties="{title: {text: 'Sales Per Currency'}}">
+                                     <viz:VizFrame id="idVizFrame3" uiConfig="{applicationSet :'fiori'}" vizType="pie" vizProperties="{title: {text: 'Sales Per Currency'}}">
                                         <viz:dataset>
                                             <viz.data:FlattenedDataset data="{/SalesCurrencySet}">
                                                 <viz.data:dimensions>

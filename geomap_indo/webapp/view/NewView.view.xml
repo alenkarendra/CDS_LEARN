@@ -1,9 +1,55 @@
-<mvc:View controllerName="geomapindo.controller.NewView" 
-	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns="sap.m">
-	<Page id="_IDGenPage1" title="New View" showNavButton="true" navButtonPress="onBackPress" navButtonTooltip="Back">
+<mvc:View controllerName="geomapindo.controller.NewView"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+
+	<Page id="_IDGenPage1" titleAlignment="Center" title="New View" showNavButton="true" navButtonPress="onBackPress" navButtonTooltip="Back">
+		<!-- <l:FixFlex id="_IDGenFixFlex" class="fixFlexVertical"> 
+
+	</l:FixFlex> -->
 		<content>
 			<Text id="_IDGenText2" text="Welcome to the new view!" />
+			
+			<Text id="_IDGenText3" text="{salesIndo>salesData/0/sales}" />
+
+
+			<!-- Start SALES PER COUNTRY -->
+			<l:BlockLayout id="_IDGenBlockLayout2" background="Dashboard" visible="true">
+				<l:content>
+					<l:BlockLayoutRow id="_IDGenBlockLayoutRow1" rowColorSet="ColorSet1" scrollable="false">
+						<l:content>
+							<l:BlockLayoutCell id="idCell4" width="1">
+								<l:content>
+									<viz:VizFrame id="_IDGenVizFrame" uiConfig="{applicationSet:'fiori'}" vizType="Pie"  vizProperties="{title: {text: 'Sales Per City'}}">
+										
+										<viz:dataset>
+											<viz.data:FlattenedDataset id="_IDGenFlattenedDataset1" data="{/ZRENDRA_IDN}">
+												<viz.data:dimensions>
+													<viz.data:DimensionDefinition id="_IDGenDimensionDefinition" name="City" value="{city}">
+													</viz.data:DimensionDefinition>
+												</viz.data:dimensions>
+												<viz.data:measures>
+													<viz.data:MeasureDefinition id="_IDGenMeasureDefinition" name="Sales" value="{sales}">
+													</viz.data:MeasureDefinition>
+												</viz.data:measures>
+											</viz.data:FlattenedDataset>
+										</viz:dataset>
+									
+										<viz:feeds>
+                                            <viz.feeds:FeedItem id="_IDGenFeedItem1" uid="size" type="Measure" values="sales"></viz.feeds:FeedItem>
+                                            <viz.feeds:FeedItem id="_IDGenFeedItem2" uid="color" type="Dimension" values="city"></viz.feeds:FeedItem>
+                                        </viz:feeds>
+
+									</viz:VizFrame>
+								</l:content>
+							</l:BlockLayoutCell>
+						</l:content>
+					</l:BlockLayoutRow>
+				</l:content>
+			</l:BlockLayout>
 		</content>
 	</Page>
 </mvc:View>
