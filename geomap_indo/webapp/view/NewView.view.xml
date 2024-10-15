@@ -16,7 +16,7 @@
 			<Text id="_IDGenText3" text="{salesIndo>salesData/0/sales}" />
 
 
-			<!-- Start SALES PER COUNTRY -->
+			<!-- Start of SALES PER COUNTRY -->
 			<l:BlockLayout id="_IDGenBlockLayout2" background="Dashboard" visible="true">
 				<l:content>
 					<l:BlockLayoutRow id="_IDGenBlockLayoutRow1" rowColorSet="ColorSet1" scrollable="false">
@@ -26,8 +26,10 @@
 									<viz:VizFrame id="_IDGenVizFrame" uiConfig="{applicationSet:'fiori'}" vizType="Pie"  vizProperties="{title: {text: 'Sales Per City'}}">
 										
 										<viz:dataset>
+											<!-- <viz.data:FlattenedDataset id="_IDGenFlattenedDataset1" data="{salesIndo>/salesData}"> -->
 											<viz.data:FlattenedDataset id="_IDGenFlattenedDataset1" data="{/ZRENDRA_IDN}">
 												<viz.data:dimensions>
+													<!-- <viz.data:DimensionDefinition id="_IDGenDimensionDefinition" name="City" value="{salesData>city}"> -->
 													<viz.data:DimensionDefinition id="_IDGenDimensionDefinition" name="City" value="{city}">
 													</viz.data:DimensionDefinition>
 												</viz.data:dimensions>
@@ -39,8 +41,8 @@
 										</viz:dataset>
 									
 										<viz:feeds>
-                                            <viz.feeds:FeedItem id="_IDGenFeedItem1" uid="size" type="Measure" values="sales"></viz.feeds:FeedItem>
-                                            <viz.feeds:FeedItem id="_IDGenFeedItem2" uid="color" type="Dimension" values="city"></viz.feeds:FeedItem>
+                                            <viz.feeds:FeedItem id="_IDGenFeedItem1" uid="size" type="Measure" values="Sales"></viz.feeds:FeedItem>
+                                            <viz.feeds:FeedItem id="_IDGenFeedItem2" uid="color" type="Dimension" values="City"></viz.feeds:FeedItem>
                                         </viz:feeds>
 
 									</viz:VizFrame>
@@ -50,6 +52,8 @@
 					</l:BlockLayoutRow>
 				</l:content>
 			</l:BlockLayout>
+			<!-- End of SALES PER COUNTRY -->
+
 		</content>
 	</Page>
 </mvc:View>

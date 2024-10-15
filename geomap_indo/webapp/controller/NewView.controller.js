@@ -81,6 +81,12 @@ sap.ui.define(
             //Ubah data sales menjadi Integer
             aDataArray.forEach((element) => {
               element.sales = parseInt(element.sales);
+              // console.log(typeof(element.city));
+              // console.log(typeof(element.sales));
+
+              element.sales = element.sales / 1000;
+
+              // element.sales = toString(element.sales);
             });
 
             var oModel = new sap.ui.model.json.JSONModel();
@@ -98,6 +104,9 @@ sap.ui.define(
               "View's salesIndo model:",
               that.getView().getModel("salesIndo").getData()
             );
+
+            
+            
           },
           error: function (error) {
             console.error("Error fetching data:", error);
