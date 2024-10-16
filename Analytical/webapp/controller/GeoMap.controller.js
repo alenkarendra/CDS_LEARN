@@ -44,6 +44,9 @@ sap.ui.define(
         // byId(sChartId) -> parameter yang dipanggil untuk mencari akses dan kontrol UI berdasarkan ID yang diberikan
         var oVizFrame = oView.byId(sChartId);
 
+        console.log(oVizFrame);
+        
+
         // ChartContainerContent -> Elemen Individual yang bisa berisi  satu atau lebih grafik
         var oChartContainerContent = new ChartContainerContent({
           // menentukan konten yang berasal dari oVizFrame

@@ -4,7 +4,7 @@ sap.ui.define(
     "sap/ui/model/json/JSONModel",
     "sap/suite/ui/commons/ChartContainer",
     "sap/suite/ui/commons/ChartContainerContent",
-    "sap/m/MessageToast"
+    "sap/m/MessageToast",
   ],
   function (Controller, JSONModel, ChartContainer, ChartContainerContent) {
     "use strict";
@@ -20,8 +20,8 @@ sap.ui.define(
         // adjustMyCharBox merupakan referensi ke objek tampilan untuk mengakses dan memanipulasi kontrol UI
         // idVizFrame -> ID dari kontrol grafik tertentu,Fungsi tersebut mungkin akan menyesuaikan
         // tata letak, properti, atau perilaku dari kontrol grafik dengan ID yang diberikan.
-        // idCell1 -> ID dari suatu sel atau area dalam aplikasi SAPUI5 di mana kontrol grafik tersebut akan ditempatkan atau ditampilkan
-        this.adjustMyChartBox(oView, "_IDGenVizFrame", "idCell4");
+        // idCell4 -> ID dari suatu sel atau area dalam aplikasi SAPUI5 di mana kontrol grafik tersebut akan ditempatkan atau ditampilkan
+        this.adjustMyChartBox(oView, "IDGenVizFrame", "idCell4");
         // End Comment
 
         this.getOwnerComponent()
@@ -34,6 +34,9 @@ sap.ui.define(
         // oView->Objek yang mewakili tampilan biasanya mengambarkan struktur UI
         // byId(sChartId) -> parameter yang dipanggil untuk mencari akses dan kontrol UI berdasarkan ID yang diberikan
         var oVizFrame = oView.byId(sChartId);
+
+        console.log(oVizFrame);
+        // console.log(sChartId);
 
         if (!oVizFrame) {
           console.error("VizFrame not found: ", sChartId);
@@ -72,28 +75,49 @@ sap.ui.define(
 
         oDataModel.read("/ZRENDRA_IDN", {
           success: function (data) {
+
+            // // Sorting dari nilai sales terkecil
             data.results.sort(function (a, b) {
               return b.sales - a.sales;
             });
 
-            var aDataArray = data.results;
+            // var aDataArray = data.results;
 
-            //Ubah data sales menjadi Integer
-            aDataArray.forEach((element) => {
-              element.sales = parseInt(element.sales);
-              // console.log(typeof(element.city));
-              // console.log(typeof(element.sales));
+            // //Ubah data sales menjadi Integer
+            // aDataArray.forEach((element) => {
+            //   element.sales = parseInt(element.sales);
+            //   // console.log(typeof(element.city));
+            //   // console.log(typeof(element.sales));
 
-              element.sales = element.sales / 1000;
+            //   element.sales = element.sales / 1000;
 
-              // element.sales = toString(element.sales);
-            });
+            //   // element.sales = toString(element.sales);
+            // });
+
+            let aChartData = [];
+            // Masukkan data color ke array
+            for (let i = 0; i < data.results.length; i++) {
+              let item = data.results[i];
+              let color = "rgb(0,255,0)";
+              item.color = color;
+
+              aChartData.push(item);
+            }
+
+            let top10 = aChartData;
+            top10 = top10.splice(10);
+
+            // var oModel = new JSONModel(aChartData);
 
             var oModel = new sap.ui.model.json.JSONModel();
             oModel.setData({
-              salesData: aDataArray,
+              salesData: aChartData,
+              top10sales: top10
             });
 
+            console.log("top10: ", top10);
+            console.log("achartdata: ", aChartData);
+            
             // console.log(data.results);
 
             that.getView().setModel(oModel, "salesIndo");
@@ -105,8 +129,82 @@ sap.ui.define(
               that.getView().getModel("salesIndo").getData()
             );
 
-            
-            
+            that
+              .getView()
+              .getModel("salesIndo")
+              .attachRequestCompleted(function () {
+                // Kode untuk inisialisasi VizFrame atau melakukan sesuatu setelah data siap
+                console.log("Data telah dimuat");
+                // Anda bisa memanggil fungsi yang merender VizFrame di sini jika perlu
+              });
+
+            // Start Vizframe data manipulation
+            // var oVizFrame = this.getView().byId("IDGenVizFrame");
+            // oModel.setData(aChartData);
+
+            // var oDataset = new sap.viz.ui5.data.FlattenedDataset({
+            //   dimensions: [
+            //     {
+            //       name: "City",
+            //       value: "{salesIndo>city}",
+            //     },
+            //     // {
+            //     //   name: "productname",
+            //     //   value: "{productname}",
+            //     // },
+            //     // {
+            //     //   name: "launchdate",
+            //     //   value: "{launchdate}",
+            //     // },
+            //   ],
+            //   measures: [
+            //     {
+            //       name: "Sales",
+            //       value: "{salesIndo>sales}",
+            //     },
+            //     // {
+            //     //   name: "category",
+            //     //   value: "{category}",
+            //     // },
+            //   ],
+
+            //   data: {
+            //     path: "salesIndo>/salesData",
+            //   },
+            // });
+
+            // oVizFrame.setDataset(oDataset);
+            // oVizFrame.setModel(oModel);
+
+            // oVizFrame.setVizType("pie");
+
+            // // oVizFrame.setVizProperties({
+            // //   plotArea: {
+            // //     colorPalette: d3.scale.category20().range(),
+            // //   },
+            // // });
+
+            // var feedValueAxisM = new sap.viz.ui5.controls.common.feeds.FeedItem(
+            //   {
+            //     uid: "size",
+            //     type: "Measure",
+            //     values: ["sales"],
+            //   }
+            // );
+
+            // var feedValueAxisD = new sap.viz.ui5.controls.common.feeds.FeedItem(
+            //   {
+            //     uid: "color",
+            //     type: "Dimension",
+            //     values: ["city"],
+            //   }
+            // );
+
+            // oVizFrame.removeAllFeeds(); // Pastikan feed tidak dobel
+            // oVizFrame.addFeed(feedValueAxisM);
+            // oVizFrame.addFeed(feedValueAxisD);
+
+            // // End Of Vizframe Set
           },
           error: function (error) {
             console.error("Error fetching data:", error);

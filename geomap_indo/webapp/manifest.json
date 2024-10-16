@@ -56,7 +56,8 @@
         "sap.ui.generic.app": {},
         "sap.ui.table": {},
         "sap.ui.vbm": {},
-        "sap.ushell": {}
+        "sap.ushell": {},
+        "sap.viz": {}
       }
     },
     "contentDensities": {
