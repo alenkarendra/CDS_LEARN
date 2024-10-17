@@ -51,6 +51,9 @@ sap.ui.define(
 
         // Load the GeoJSON data and pass a callback to run when loading is done
         this.loadGeoJsonData(this.onRegionClick.bind(this));
+
+        this.getView().addStyleClass(".highest-bar");  // Menambahkan kelas custom ke view
+        var c = this.getView().addStyleClass(".highest-bar");  // Menambahkan kelas custom ke view
       },
 
       World: [],

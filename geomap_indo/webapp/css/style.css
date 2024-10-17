@@ -1,10 +1,29 @@
 /* Enter your custom styles here */
 
-.test {
+.text1 {
   background-color: rgb(13, 2, 168) !important; /* Change to desired color */
-  color: black;
+  color: rgb(228, 9, 9);
 }
 
 .customBar {
   background-color: #ff0000; /* Mengubah warna menjadi merah */
+}
+
+.sapSuiteIBCBar {
+  background-color: #28a745 !important; /* Ganti dengan warna hijau atau warna lain yang diinginkan */
+}
+
+/* Mengubah warna untuk Penjualan Tertinggi */
+#application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
+  background-color: #28a745 !important; /* Hijau untuk Penjualan Tertinggi */
+}
+
+/* Mengubah warna untuk Penjualan Rata-rata */
+#application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-1 {
+  background-color: #ffc107 !important; /* Kuning untuk Penjualan Rata-rata */
+}
+
+/* Mengubah warna untuk Penjualan Terendah */
+#application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-2 {
+  background-color: #dc3545 !important; /* Merah untuk Penjualan Terendah */
 }
