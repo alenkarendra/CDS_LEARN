@@ -5,14 +5,28 @@ sap.ui.define(
     "sap/suite/ui/commons/ChartContainer",
     "sap/suite/ui/commons/ChartContainerContent",
     "sap/m/MessageToast",
+    "geomapindo/controller/Geomap.controller",
   ],
-  function (Controller, JSONModel, ChartContainer, ChartContainerContent) {
+  function (Controller, JSONModel, ChartContainer, ChartContainerContent, GeomapController) {
     "use strict";
 
     return Controller.extend("geomapindo.controller.NewView", {
       onInit: function () {
-        // Initialization code here
+        // Panggil Controller Geomap
+        // var oGeomapController = this.getOwnerComponent().getController("geomapindo.controller.Geomap");
+        // var oGeomapView = this.getView().byId("Geomap"); // Dapatkan instance dari view
+        // var oGeomapController = oGeomapView.getController(); // Dapatkan instance controller
+        // oGeomapController.someFunction(); // Panggil fungsi dari controller Geomap
 
+        // Memanggil Function dari Controller Geomap
+        sap.ui.controller("geomapindo.controller.Geomap").someFunction();
+
+        // this.oGeomapController = GeomapController();
+        // this.oGeomapController.onInit(); // Panggil onInit jika perlu
+        
+        // console.log(this.getView().getId());
+        // var oController1 = sap.ui.getCore().byId("application-geomapindo-display-component---Geomap").getController();
+        
         // Objek yang mewakili tampilan UI
         var oView = this.getView();
 
@@ -22,6 +36,11 @@ sap.ui.define(
         // tata letak, properti, atau perilaku dari kontrol grafik dengan ID yang diberikan.
         // idCell4 -> ID dari suatu sel atau area dalam aplikasi SAPUI5 di mana kontrol grafik tersebut akan ditempatkan atau ditampilkan
         this.adjustMyChartBox(oView, "IDGenVizFrame", "idCell4");
+        this.adjustMyChartBox(
+          oView,
+          "IDGenVizFrame2",
+          "_IDGenBlockLayoutCell1"
+        );
         // End Comment
 
         this.getOwnerComponent()
@@ -35,7 +54,7 @@ sap.ui.define(
         // byId(sChartId) -> parameter yang dipanggil untuk mencari akses dan kontrol UI berdasarkan ID yang diberikan
         var oVizFrame = oView.byId(sChartId);
 
-        console.log(oVizFrame);
+        // console.log(oVizFrame);
         // console.log(sChartId);
 
         if (!oVizFrame) {
@@ -75,13 +94,26 @@ sap.ui.define(
 
         oDataModel.read("/ZRENDRA_IDN", {
           success: function (data) {
+            let aChartData = [];
+            let top10 = [];
+
+            // Masukkan data color ke array
+            for (let i = 0; i < data.results.length; i++) {
+              let item = data.results[i];
+              let color = "rgb(0,255,0)";
+              item.color = color;
+
+              aChartData.push(item);
+            }
 
             // // Sorting dari nilai sales terkecil
             data.results.sort(function (a, b) {
               return b.sales - a.sales;
             });
 
-            // var aDataArray = data.results;
+            top10 = data.results.slice(0, 10);
+
+            var aDataArray = data.results;
 
             // //Ubah data sales menjadi Integer
             // aDataArray.forEach((element) => {
@@ -94,49 +126,25 @@ sap.ui.define(
             //   // element.sales = toString(element.sales);
             // });
 
-            let aChartData = [];
-            // Masukkan data color ke array
-            for (let i = 0; i < data.results.length; i++) {
-              let item = data.results[i];
-              let color = "rgb(0,255,0)";
-              item.color = color;
-
-              aChartData.push(item);
-            }
-
-            let top10 = aChartData;
-            top10 = top10.splice(10);
-
             // var oModel = new JSONModel(aChartData);
 
             var oModel = new sap.ui.model.json.JSONModel();
             oModel.setData({
               salesData: aChartData,
-              top10sales: top10
+              top10sales: top10,
             });
 
-            console.log("top10: ", top10);
-            console.log("achartdata: ", aChartData);
-            
-            // console.log(data.results);
-
+            // Set Model Localy
             that.getView().setModel(oModel, "salesIndo");
+            //  Set Model Globaly
+            // sap.ui.getCore().setModel(oModel, "salesIndo"); 
 
             // Optionally, check if the model is set in the view
-            console.log("Model salesIndo data:", oModel.getData());
-            console.log(
-              "View's salesIndo model:",
-              that.getView().getModel("salesIndo").getData()
-            );
-
-            that
-              .getView()
-              .getModel("salesIndo")
-              .attachRequestCompleted(function () {
-                // Kode untuk inisialisasi VizFrame atau melakukan sesuatu setelah data siap
-                console.log("Data telah dimuat");
-                // Anda bisa memanggil fungsi yang merender VizFrame di sini jika perlu
-              });
+            // console.log("Model salesIndo data:", oModel.getData());
+            // console.log(
+            //   "View's salesIndo model:",
+            //   that.getView().getModel("salesIndo").getData()
+            // );
 
             // Start Vizframe data manipulation
             // var oVizFrame = this.getView().byId("IDGenVizFrame");
@@ -211,6 +219,19 @@ sap.ui.define(
             sap.m.MessageToast.show("Error fetching data.");
           },
         });
+      },
+
+      onSelectData: function (oEvent) {
+        // Mendapatkan data dari event selectData
+        var oData = oEvent.getParameter("data");
+        if (oData && oData[0]) {
+          var selectedData = oData[0];
+          var sCity = selectedData.data["City"];
+          var sSales = selectedData.data["Sales"];
+
+          // Menampilkan data yang dipilih menggunakan MessageToast atau logic lain
+          sap.m.MessageToast.show("City: " + sCity + ", Sales: " + sSales);
+        }
       },
     });
   }

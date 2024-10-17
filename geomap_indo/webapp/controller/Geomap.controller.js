@@ -198,6 +198,10 @@ sap.ui.define(
         });
       },
 
+      someFunction: function () {
+        console.log("test");
+      },
+
       calculatedSalesData: function (salesData) {
         // debugger;
         if (!salesData || salesData.length === 0) {
@@ -266,17 +270,6 @@ sap.ui.define(
 
         DataDetail = Isi;
         DataCode = e.getParameter("code");
-
-        // for (let i = 0; i < DataDetail.length; i++) {
-        //   let DataMsg = "";
-        //   let Code1 = DataDetail[i].id_code;
-
-        //   if (Code1 == DataCode) {
-        //     DataMsg = DataDetail[i].city;
-
-        //     MessageToast.show("Indonesia" + "\n" + DataMsg);
-        //   }
-        // }
 
         for (let i = 0; i < JsonDunia.length; i++) {
           let DataMsg = "";

@@ -19,11 +19,13 @@
     <!-- xmlns:smartForm="sap.ui.comp.smartform"
 	xmlns:smartField="sap.ui.comp.smartfield"
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" -->
-    <Page id="page" title="{i18n>title}" enableScrolling="true" showNavButton="false" showSubHeader="true" titleAlignment="Center" >
+    <Page id="pageGeomap" title="{i18n>title}" enableScrolling="true" showNavButton="false" showSubHeader="true" titleAlignment="Center" >
 
         <content>
             <l:FixFlex id="_IDGenFixFlex" class="fixFlexFixedSize">
                 <l:flexContent>
+                    
+                    <!-- MAPS -->
                     <vbm:AnalyticMap id="vbi" width="100%" xmlns:l="sap.ui.layout"
                         height="100%" initialPosition="118.3701629292688;-3.072095646893412;0" initialZoom="5" regions="{productModel>/products}" regionClick="onRegionClick">
                         <vbm:regions>
@@ -36,6 +38,8 @@
                                     </vbm:tooltip>
                                 </vbm:Spot>
                             </vbm:Spots> -->
+
+                            <!-- SPOT Tooltip -->
                             <vbm:Spots id="_IDGenSpots" items="{productModel>/products}" click="onClickItem" contextMenu="onContextMenuItem">
                                 <vbm:Spot id="idSpot" 
                                     position="{productModel>pos}" 
@@ -47,18 +51,13 @@
                             </vbm:Spots>
                         </vbm:vos>
 
+                        <!-- Legends -->
                         <vbm:legend>
                             <vbm:Legend id="legend" caption="Sales Penjualan"
                             items="{productModel>/legends}">
                                 <vbm:LegendItem id="_IDGenLegendItem" text="{productModel>text}" color="{productModel>color}"/>
                             </vbm:Legend>
                         </vbm:legend>
-
-                        <!-- <vbm:legend>
-                            <vbm:Legend id="legend" caption="Sales Penjualan">
-                                <vbm:LegendItem id="_IDGenLegendItem" text="Low" color="{productModel>color}"/>
-                            </vbm:Legend>
-                        </vbm:legend> -->
 
                     </vbm:AnalyticMap>
                 </l:flexContent>
@@ -81,6 +80,8 @@
                                                 <Button id="_IDGenButton2" text="3" type="Accept" />
                                             </FlexBox> -->
 
+
+                                            <!-- Start of Bar Chart -->
                                             <FlexBox id="_IDGenFlexBox2"
                                                 height="100%"
                                                 alignItems="Center"
@@ -93,6 +94,7 @@
                                                     </mchart:bars>
                                                 </mchart:InteractiveBarChart>
                                             </FlexBox>
+                                            <!-- End of Bar Chart -->
 
                                             <!-- <FlexBox id="_IDGenFlexBox3"
                                                 height="100%"
@@ -122,9 +124,8 @@
                                             </f:SimpleForm>
                                         </VBox>
 
-
                                         <VBox id="_IDGenVBox3" alignItems="Center">
-                                        <Button icon="" id="_IDGenButton" text="New View" press="onPressClick"/>
+                                        <Button icon="" id="_IDGenButton" text="Chart View" press="onPressClick"/>
                                         </VBox>
 
 
