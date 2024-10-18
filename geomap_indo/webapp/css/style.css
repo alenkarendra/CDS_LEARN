@@ -9,9 +9,8 @@
   background-color: #ff0000; /* Mengubah warna menjadi merah */
 }
 
-.sapSuiteIBCBar {
-  background-color: #28a745 !important; /* Ganti dengan warna hijau atau warna lain yang diinginkan */
-}
+/* .sapSuiteIBCBar {
+  background-color: #28a745 !important; /* Ganti dengan warna hijau atau warna lain yang diinginkan } */
 
 /* Mengubah warna untuk Penjualan Tertinggi */
 #application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
@@ -27,3 +26,18 @@
 #application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-2 {
   background-color: #dc3545 !important; /* Merah untuk Penjualan Terendah */
 }
+
+/* ==================  DEPLOY ID  ======================== */
+/* Ketika di deploy, ID dari Bar Chart nya akan berubah seperti dibawah ini */
+
+#container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
+  background-color: #28a745 !important; /* Hijau untuk Penjualan Tertinggi */
+}
+#container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-1 {
+  background-color: #ffc107 !important; /* Kuning untuk Penjualan Rata-rata */
+}
+#container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-2 {
+  background-color: #dc3545 !important; /* Merah untuk Penjualan Terendah */
+}
+
+/* ======================================================= */
