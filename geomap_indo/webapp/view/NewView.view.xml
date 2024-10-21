@@ -11,8 +11,7 @@
 
 	</l:FixFlex> -->
 		<content>
-			<Text class="text1" id="_IDGenText2" text="Ini Halaman New View" />
-
+			<!-- <Text class="text1" id="_IDGenText2" text="Ini Halaman New View" /> -->
 
 			<!-- Daftar List yang akan otomatis looping data -->
 			<!-- <List items="{salesIndo>/salesData}">

@@ -52,8 +52,14 @@ sap.ui.define(
         // Load the GeoJSON data and pass a callback to run when loading is done
         this.loadGeoJsonData(this.onRegionClick.bind(this));
 
-        this.getView().addStyleClass(".highest-bar");  // Menambahkan kelas custom ke view
-        var c = this.getView().addStyleClass(".highest-bar");  // Menambahkan kelas custom ke view
+        this.getView().addStyleClass(".highest-bar"); // Menambahkan kelas custom ke view
+        var c = this.getView().addStyleClass(".highest-bar"); // Menambahkan kelas custom ke view
+
+        this.customCSS();
+      },
+
+      onAfterRendering: function () {
+        this.customCSS();
       },
 
       World: [],
@@ -203,6 +209,130 @@ sap.ui.define(
 
       someFunction: function () {
         console.log("test");
+      },
+
+      customCSS: function () {
+        console.log("test");
+
+        var bars = this.getView().byId("_IDGenInteractiveBarChart").getBars();
+
+        console.log(bars[0].getId());
+        
+        var sBarId = bars[0].getId();
+
+        var d = sap.m.ValueColor;
+
+        console.log(d);
+
+        var c = bars[0].setColor("Good");
+        
+
+
+
+
+
+        var oBarHighest = sap.ui
+          .getCore()
+          .byId(
+            "application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-1"
+          );
+        if (oBarHighest) {
+          oBarHighest.addStyleClass("highest-bar");
+        }
+
+        // var sId =
+        //   "#application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-1";
+        // $(sId).addClass("highest-bar");
+
+        var sChartId = this.getView().byId("_IDGenInteractiveBarChart").getId(); // Mendapatkan ID global chart
+
+        // sChartId.addStyleClass("highest-bar");
+
+        var oChart = this.getView().byId("_IDGenInteractiveBarChart").getBars();
+        // oChart.addStyleClass("highest-bar");
+
+
+        var sId = "#application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-1"; // ID yang Anda dapatkan dari DOM
+
+        // Pastikan elemen tersebut ada sebelum menambah kelas CSS
+        if ($(sId).length > 0) {
+            $(sId).addClass("highest-bar");
+        } else {
+            console.error("Elemen tidak ditemukan: " + sId);
+        }
+
+        // Get ID BAR CHART
+        var oBarChart = this.getView().byId("_IDGenInteractiveBarChart");
+        if (oBarChart) {
+          var sId = oBarChart.getId(); // Mendapatkan ID yang digenerate | application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart
+          console.log("Bar Chart ID: " + sId);
+        }
+
+        console.log(sChartId);
+        // console.log(oChart);
+
+        // // Mengecek ID dan elemen
+        // console.log("Chart ID: " + sChartId);
+        // console.log("Bar 0 ID: " + sChartId + "-bar-positive-0");
+        // console.log("Bar 1 ID: " + sChartId + "-bar-positive-1");
+        // console.log("Bar 2 ID: " + sChartId + "-bar-positive-2");
+
+        // // Mengambil referensi kontrol menggunakan ID
+        // var oControl = this.byId(sChartId); // Ganti dengan ID elemen yang Anda inginkan
+
+        // // Mengambil referensi DOM
+        // var oDomElement = oControl.getDomRef();
+
+        // if (oDomElement) {
+        //   // Menambahkan class CSS
+        //   $(oDomElement).addClass("customClass"); // Ganti dengan nama class yang ada di style.css
+        // }
+
+        // var test = document.getElementById(sChartId + "-bar-positive-0"); // Cek elemen chart
+
+        // // Menambahkan kelas CSS untuk setiap bar
+        // if (
+        //   $("#" + jQuery.sap.encodeCSS(sChartId + "-bar-positive-0")).length
+        // ) {
+        //   $("#" + jQuery.sap.encodeCSS(sChartId + "-bar-positive-0")).addClass(
+        //     "highest-bar"
+        //   );
+        //   console.log("Kelas 'highest-bar' ditambahkan ke Bar 0");
+        // } else {
+        //   console.log("Bar 0 tidak ditemukan!");
+        // }
+
+        // if (
+        //   $("#" + jQuery.sap.encodeCSS(sChartId + "-bar-positive-1")).length
+        // ) {
+        //   $("#" + jQuery.sap.encodeCSS(sChartId + "-bar-positive-1")).addClass(
+        //     "average-bar"
+        //   );
+        //   console.log("Kelas 'average-bar' ditambahkan ke Bar 1");
+        // } else {
+        //   console.log("Bar 1 tidak ditemukan!");
+        // }
+
+        // if (
+        //   $("#" + jQuery.sap.encodeCSS(sChartId + "-bar-positive-2")).length
+        // ) {
+        //   $("#" + jQuery.sap.encodeCSS(sChartId + "-bar-positive-2")).addClass(
+        //     "lowest-bar"
+        //   );
+        //   console.log("Kelas 'lowest-bar' ditambahkan ke Bar 2");
+        // } else {
+        //   console.log("Bar 2 tidak ditemukan!");
+        // }
+
+        // var oDomElement = this.getView().byId("_IDGenBarHighest");
+        // // .getDomRef();
+        // if (oDomElement) {
+        //   oDomElement.classList.add("customClass");
+        // } else {
+        //   console.error("DOM element not found!");
+        // }
+
+        //  this.getView().byId("_IDGenBarHighest").addStyleClass("customClass");
       },
 
       calculatedSalesData: function (salesData) {

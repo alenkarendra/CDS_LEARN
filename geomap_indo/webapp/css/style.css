@@ -5,39 +5,74 @@
   color: rgb(228, 9, 9);
 }
 
-.customBar {
+.customClass {
   background-color: #ff0000; /* Mengubah warna menjadi merah */
+}
+
+
+
+
+.highest-bar {
+  background-color: #28a745 !important; /* Hijau untuk Penjualan Tertinggi */
+}
+
+.average-bar {
+  background-color: #ffc107 !important; /* Kuning untuk Penjualan Rata-rata */
+}
+
+.lowest-bar {
+  background-color: #dc3545 !important; /* Merah untuk Penjualan Terendah */
 }
 
 /* .sapSuiteIBCBar {
   background-color: #28a745 !important; /* Ganti dengan warna hijau atau warna lain yang diinginkan } */
 
+/* ================ LOCAL ID ================ */
 /* Mengubah warna untuk Penjualan Tertinggi */
-#application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
-  background-color: #28a745 !important; /* Hijau untuk Penjualan Tertinggi */
-}
+/* #application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
+  background-color: #28a745 !important; 
+} */
 
 /* Mengubah warna untuk Penjualan Rata-rata */
 #application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-1 {
-  background-color: #ffc107 !important; /* Kuning untuk Penjualan Rata-rata */
+  background-color: #ffc107 !important; 
 }
 
 /* Mengubah warna untuk Penjualan Terendah */
 #application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-2 {
-  background-color: #dc3545 !important; /* Merah untuk Penjualan Terendah */
+  background-color: #dc3545 !important; 
 }
 
 /* ==================  DEPLOY ID  ======================== */
 /* Ketika di deploy, ID dari Bar Chart nya akan berubah seperti dibawah ini */
 
-#container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
-  background-color: #28a745 !important; /* Hijau untuk Penjualan Tertinggi */
-}
-#container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-1 {
-  background-color: #ffc107 !important; /* Kuning untuk Penjualan Rata-rata */
-}
-#container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-2 {
-  background-color: #dc3545 !important; /* Merah untuk Penjualan Terendah */
-}
+/* Hijau untuk Penjualan Tertinggi */
+/* #container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
+  background-color: #28a745 !important; 
+} */
+
+/* Kuning untuk Penjualan Rata-rata */
+/* #container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-1 {
+  background-color: #ffc107 !important; 
+} */
+
+/* Merah untuk Penjualan Terendah */
+/* #container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-2 {
+  background-color: #dc3545 !important; 
+} */
 
 /* ======================================================= */
+
+/* 
+ID GEOMAP APP
+application-geomapindo-display-component---Geomap--_IDGenFixFlex
+
+ID Legends 
+id="application-geomapindo-display-component---Geomap--vbi-application-geomapindo-display-component---Geomap--legend-content"
+
+"application-geomapindo-display-component---Geomap--_IDGenBarHighest"
+
+
+
+
+*/
