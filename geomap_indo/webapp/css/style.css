@@ -1,5 +1,11 @@
 /* Enter your custom styles here */
 
+:root {
+  --success-color: rgb(152, 216, 170);
+  --warning-color: rgb(247, 208, 96);
+  --error-color : rgb(255, 109, 96);
+}
+
 .text1 {
   background-color: rgb(13, 2, 168) !important; /* Change to desired color */
   color: rgb(228, 9, 9);
@@ -9,8 +15,9 @@
   background-color: #ff0000; /* Mengubah warna menjadi merah */
 }
 
-
-
+.biru {
+  background-color: #28a745 !important; /* Hijau untuk Penjualan Tertinggi */
+}
 
 .highest-bar {
   background-color: #28a745 !important; /* Hijau untuk Penjualan Tertinggi */
@@ -29,18 +36,18 @@
 
 /* ================ LOCAL ID ================ */
 /* Mengubah warna untuk Penjualan Tertinggi */
-/* #application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
-  background-color: #28a745 !important; 
-} */
+#application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
+  background-color: var(--success-color) !important; 
+}
 
 /* Mengubah warna untuk Penjualan Rata-rata */
 #application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-1 {
-  background-color: #ffc107 !important; 
+  background-color:  var(--warning-color) !important; 
 }
 
 /* Mengubah warna untuk Penjualan Terendah */
 #application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-2 {
-  background-color: #dc3545 !important; 
+  background-color: var(--error-color) !important; 
 }
 
 /* ==================  DEPLOY ID  ======================== */

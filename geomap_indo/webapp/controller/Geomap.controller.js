@@ -212,24 +212,23 @@ sap.ui.define(
       },
 
       customCSS: function () {
-        console.log("test");
-
-        var bars = this.getView().byId("_IDGenInteractiveBarChart").getBars();
-
-        console.log(bars[0].getId());
+        var sId = "application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0"; // ID yang Anda dapatkan dari DOM
+        console.log(sId);
         
-        var sBarId = bars[0].getId();
+        var bars = this.getView().byId("_IDGenInteractiveBarChart").getBars(); //Get 3 penjualan Bar
+        console.log(bars);
+        
+        var sBarId = bars[0]; //.getId();
+        console.log('bar 0 = ', sBarId);
 
-        var d = sap.m.ValueColor;
-
+        var d = sap.m.ValueColor; //Get Color Sapui5
         console.log(d);
 
-        var c = bars[0].setColor("Good");
-        
+        var c = bars[0].setColor("Good"); //Set Color buat di sebelah kiri label text
 
+        var id = "application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0";
 
-
-
+        // let cek = this.getView().byId("_IDGenInteractiveBarChart").addStyleClass("highest-bar"); //MENAMBAHKAN STYLE CLASS CSS
 
         var oBarHighest = sap.ui
           .getCore()
@@ -252,8 +251,7 @@ sap.ui.define(
         // oChart.addStyleClass("highest-bar");
 
 
-        var sId = "#application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-1"; // ID yang Anda dapatkan dari DOM
-
+       
         // Pastikan elemen tersebut ada sebelum menambah kelas CSS
         if ($(sId).length > 0) {
             $(sId).addClass("highest-bar");
@@ -332,7 +330,17 @@ sap.ui.define(
         //   console.error("DOM element not found!");
         // }
 
-        //  this.getView().byId("_IDGenBarHighest").addStyleClass("customClass");
+        let z =  this.getView().byId("_IDGenBarHighest");
+        console.log(z.oParent);
+
+        let x = bars[0].$().addClass('biru');
+        console.log(x);
+
+        let y = new sap.ui.core.HTML({
+          content: '<p><b>This text is bold</b></p>'
+        });
+        console.log(y);
+        this.getView().addDependent(y); 
       },
 
       calculatedSalesData: function (salesData) {
