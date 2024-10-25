@@ -11,14 +11,18 @@
     xmlns:uxap="sap.uxap"
     xmlns:f="sap.ui.layout.form"
     xmlns:trm="sap.ui.table.rowmodes"
-    xmlns:t="sap.ui.table">
+    xmlns:t="sap.ui.table"
+    xmlns:sf="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:card="sap.f.cards"
+    xmlns:grid="sap.ui.layout.cssgrid">
 
     <!-- xmlns:smartForm="sap.ui.comp.smartform" xmlns:smartField="sap.ui.comp.smartfield" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" -->
     <Page id="pageGeomap" title="{i18n>title}" enableScrolling="true" showNavButton="false" showSubHeader="true" titleAlignment="Center">
 
-
         <content>
             <l:FixFlex id="_IDGenFixFlex" class="fixFlexFixedSize">
+
                 <l:flexContent>
 
                     <!-- MAPS -->
@@ -90,36 +94,106 @@
                                                     <StandardListItem id="_IDGenStandardListItem1" title="Penjualan Terendah adalah Kota : {productModel>/sales/cityLowest}" type="Active"/>
                                                  </List>                                                
                                             </FlexBox> -->
+                                        </Panel>
 
-                                            <VBox id="_IDGenVBox1" fitContainer="true" width="100%">
-                                                <!-- <f:SimpleForm id="_IDGenSimpleForm1" minWidth="25%" title="Summary" editable="true" layout="ColumnLayout"> -->
+                                        <Panel id="panelForGridList" headerText="Summary" backgroundDesign="Transparent">
+                                            <!-- <layoutData>
+                                                <FlexItemData id="_IDGenFlexItemData" baseSize="100%"/>
+                                            </layoutData> -->
 
-                                                    <Label id="_IDGenLabel" textAlign="Begin" text="Penjualan Tertinggi adalah Provinsi " />
-                                                    <!-- <HBox> -->
-                                                    <Text id="_IDGenText" text="{productModel>/sales/cityHighest}" textAlign="Center" />
-                                                    <ObjectNumber id="_IDGenObjectNumber1" state="Success" number="{productModel>/sales/Dhighest}" unit="IDR" textAlign="Begin" emphasized="true"/>
-                                                    <!-- </HBox> -->
+                                            <sf:GridList headerText="">
+                                                <sf:customLayout>
+                                                    <grid:GridBoxLayout boxMinWidth="17rem"/>
+                                                </sf:customLayout>
 
-                                                    <Label id="_IDGenLabel1" textAlign="Begin" text="Penjualan Terendah adalah Provinsi "/>
-                                                    <Text id="_IDGenText1" text="{productModel>/sales/cityLowest}" textAlign="Center"/>
-                                                    <ObjectNumber id="_IDGenObjectNumber2" state="Error" number="{productModel>/sales/Dlowest}" unit="IDR"/>
+                                                <sf:GridListItem>
+                                                    <VBox class="sapUiSmallMargin">
+                                                        <layoutData>
+                                                            <FlexItemData growFactor="1" shrinkFactor="0" />
+                                                        </layoutData>
 
-                                                <FlexBox>
-                                                    <GenericTag text="Project Cost" design="StatusIconHidden" status="Error" class="sapUiSmallMarginBottom">
-                                                        <ObjectNumber state="Error" emphasized="false" number="3.5M" unit="EUR"/>
-                                                    </GenericTag>
-                                                </FlexBox>
-                                                <!-- </f:SimpleForm> -->
-                                            </VBox>
+                                                        <!-- <Label textAlign="Begin" text="Penjualan Tertinggi adalah Provinsi " wrapping="true" /> -->
+                                                        <Text text="Penjualan Tertinggi adalah Provinsi" textAlign="Center" wrapping="true"/>
+                                                        <!-- <ObjectNumber state="Success" number="{productModel>/sales/Dhighest}" unit="IDR" textAlign="Begin" emphasized="true"/> -->
+                                                        <GenericTag text="{productModel>/sales/cityHighest}" design="StatusIconHidden" status="Success" class="sapUiSmallMarginBottom">
+                                                            <ObjectNumber state="Success" emphasized="false" number="{productModel>/sales/Dhighest}" unit="IDR"/>
+                                                        </GenericTag>
+                                                    </VBox>
+                                                </sf:GridListItem>
 
-                                            <VBox id="_IDGenVBox3" alignItems="Center">
-                                                <Button icon="" id="_IDGenButton" text="Chart View" press="onPressClick"/>
+                                                <sf:GridListItem>
+                                                    <VBox class="sapUiSmallMargin">
+                                                        <layoutData>
+                                                            <FlexItemData growFactor="1" shrinkFactor="0" />
+                                                        </layoutData>
+                                                        <Text text="Penjualan Terendah adalah Provinsi" textAlign="Center" wrapping="true"/>
+                                                        <GenericTag text="{productModel>/sales/cityLowest}" design="StatusIconHidden" status="Error" class="sapUiSmallMarginBottom">
+                                                            <ObjectNumber state="Error" emphasized="false" number="{productModel>/sales/Dlowest}" unit="IDR"/>
+                                                        </GenericTag>
 
-                                                <GenericTag text="Project Cost" design="StatusIconHidden" status="Error" class="sapUiSmallMarginBottom">
-                                                    <ObjectNumber state="Error" emphasized="false" number="3.5M" unit="EUR"/>
-                                                </GenericTag>
-                                            </VBox>
+                                                    </VBox>
+                                                </sf:GridListItem>
 
+                                            </sf:GridList>
+
+                                            <sf:GridContainer id="_IDGenGridContainer" borderReached="onBorderReached">
+
+                                                <sf:layout>
+                                                    <sf:GridContainerSettings rowSize="84px" columnSize="84px" gap="8px" />
+                                                </sf:layout>
+
+                                                <sf:layoutXS>
+                                                    <sf:GridContainerSettings rowSize="70px" columnSize="70px" gap="8px" />
+                                                </sf:layoutXS>
+
+
+                                                <VBox id="_IDGenVBox1" fitContainer="true" width="100%">
+                                                    <!-- <f:SimpleForm id="_IDGenSimpleForm1" minWidth="25%" title="Summary" editable="true" layout="ColumnLayout"> -->
+
+                                                    <l:HorizontalLayout id="_IDGenHorizontalLayout">
+                                                        <l:VerticalLayout id="_IDGenVerticalLayout">
+
+
+                                                            <Label id="_IDGenLabel" textAlign="Begin" text="Penjualan Tertinggi adalah Provinsi " />
+                                                            <!-- <HBox> -->
+                                                            <Text id="_IDGenText" text="{productModel>/sales/cityHighest}" textAlign="Center" />
+                                                            <ObjectNumber id="_IDGenObjectNumber1" state="Success" number="{productModel>/sales/Dhighest}" unit="IDR" textAlign="Begin" emphasized="true"/>
+                                                            <!-- </HBox> -->
+
+                                                            <Label id="_IDGenLabel1" textAlign="Begin" text="Penjualan Terendah adalah Provinsi "/>
+                                                            <Text id="_IDGenText1" text="{productModel>/sales/cityLowest}" textAlign="Center"/>
+                                                            <ObjectNumber id="_IDGenObjectNumber2" state="Error" number="{productModel>/sales/Dlowest}" unit="IDR"/>
+
+                                                        </l:VerticalLayout>
+
+                                                        <l:VerticalLayout id="_IDGenVerticalLayout1">
+                                                            <GenericTag id="_IDGenGenericTag1" text="{productModel>/sales/cityHighest}" design="StatusIconHidden" status="Success" class="sapUiSmallMarginBottom">
+                                                                <ObjectNumber id="_IDGenObjectNumber" state="Success" emphasized="false" number="{productModel>/sales/Dhighest}" unit="IDR"/>
+                                                            </GenericTag>
+                                                            <GenericTag id="_IDGenGenericTag2" text="{productModel>/sales/cityLowest}" design="StatusIconHidden" status="Error" class="sapUiSmallMarginBottom">
+                                                                <ObjectNumber id="_IDGenObjectNumber3" state="Error" emphasized="false" number="{productModel>/sales/Dlowest}" unit="IDR"/>
+                                                            </GenericTag>
+                                                        </l:VerticalLayout>
+                                                    </l:HorizontalLayout>
+                                                    <!-- </f:SimpleForm> -->
+
+                                                    <VBox id="_IDGenVBox3" alignItems="Center">
+                                                        <Button icon="" id="_IDGenButton" text="More Chart View .." press="onPressClick"/>
+                                                    </VBox>
+
+
+
+                                                </VBox>
+
+
+
+
+
+
+
+
+
+                                            </sf:GridContainer>
                                         </Panel>
 
                                         <VBox id="_IDGenVBox2" alignContent="End" alignItems="End" direction="RowReverse">

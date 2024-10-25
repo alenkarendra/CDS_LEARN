@@ -561,6 +561,10 @@ sap.ui.define(
         oRouter.navTo("RouteNewView");
       },
 
+      onRevealGrid: function () {
+        RevealGrid.toggle(["grid1", "grid2", "grid3", "grid4"] , this.getView());
+      },
+
       // navButtonPress: function () {
       //   // // Option 1: Use router to navigate to a specific route
       //   // var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
