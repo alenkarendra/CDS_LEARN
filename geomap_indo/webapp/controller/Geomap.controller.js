@@ -212,21 +212,23 @@ sap.ui.define(
       },
 
       customCSS: function () {
-        var sId = "application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0"; // ID yang Anda dapatkan dari DOM
+        var sId =
+          "application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0"; // ID yang Anda dapatkan dari DOM
         console.log(sId);
-        
+
         var bars = this.getView().byId("_IDGenInteractiveBarChart").getBars(); //Get 3 penjualan Bar
         console.log(bars);
-        
+
         var sBarId = bars[0]; //.getId();
-        console.log('bar 0 = ', sBarId);
+        console.log("bar 0 = ", sBarId);
 
         var d = sap.m.ValueColor; //Get Color Sapui5
         console.log(d);
 
         var c = bars[0].setColor("Good"); //Set Color buat di sebelah kiri label text
 
-        var id = "application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0";
+        var id =
+          "application-geomapindo-display-component---Geomap--_IDGenInteractiveBarChart-bar-positive-0";
 
         // let cek = this.getView().byId("_IDGenInteractiveBarChart").addStyleClass("highest-bar"); //MENAMBAHKAN STYLE CLASS CSS
 
@@ -250,13 +252,11 @@ sap.ui.define(
         var oChart = this.getView().byId("_IDGenInteractiveBarChart").getBars();
         // oChart.addStyleClass("highest-bar");
 
-
-       
         // Pastikan elemen tersebut ada sebelum menambah kelas CSS
         if ($(sId).length > 0) {
-            $(sId).addClass("highest-bar");
+          $(sId).addClass("highest-bar");
         } else {
-            console.error("Elemen tidak ditemukan: " + sId);
+          console.error("Elemen tidak ditemukan: " + sId);
         }
 
         // Get ID BAR CHART
@@ -330,17 +330,17 @@ sap.ui.define(
         //   console.error("DOM element not found!");
         // }
 
-        let z =  this.getView().byId("_IDGenBarHighest");
+        let z = this.getView().byId("_IDGenBarHighest");
         console.log(z.oParent);
 
-        let x = bars[0].$().addClass('biru');
+        let x = bars[0].$().addClass("biru");
         console.log(x);
 
         let y = new sap.ui.core.HTML({
-          content: '<p><b>This text is bold</b></p>'
+          content: "<p><b>This text is bold</b></p>",
         });
         console.log(y);
-        this.getView().addDependent(y); 
+        this.getView().addDependent(y);
       },
 
       calculatedSalesData: function (salesData) {
@@ -562,7 +562,82 @@ sap.ui.define(
       },
 
       onRevealGrid: function () {
-        RevealGrid.toggle(["grid1", "grid2", "grid3", "grid4"] , this.getView());
+        RevealGrid.toggle(["grid1", "grid2", "grid3", "grid4"], this.getView());
+      },
+
+      onSalesPress: function (oEvent) {
+        // Ambil informasi dari elemen yang ditekan
+        var oSource = oEvent.getSource();
+        var sId = oSource.getId();
+
+        // Ambil model productModel
+        var oModel = this.getView().getModel("productModel");
+        var aProducts = oModel.getProperty("/products");
+
+        let text = "";
+
+        // Cek apakah elemen yang ditekan adalah untuk penjualan tertinggi atau terendah
+        if (sId.includes("Highest")) {
+          var tittle = "Penjualan Tertinggi";
+
+          //Arrow Function untuk mencari Index yang sesuai
+          var index = aProducts.findIndex(
+            (item) => item.id_code === oModel.getProperty("/sales/idHighest")
+          );
+          var salesData = aProducts[index];
+        } else if (sId.includes("Lowest")) {
+          var tittle = "Penjualan Terendah";
+
+          //Arrow Function untuk mencari Index yang sesuai
+          var index = aProducts.findIndex(
+            (item) => item.id_code === oModel.getProperty("/sales/idLowest")
+          );
+
+          var salesData = aProducts[index];
+        }
+
+        let labelWidth = 15;
+        let dspSales = Number(salesData.sales).toLocaleString("id-ID");
+
+        text =
+          "Code".padEnd(labelWidth, "\u00A0") +
+          ": " +
+          salesData.id_code +
+          "\n" +
+          "Province".padEnd(labelWidth - 2, "\u00A0") +
+          ": " +
+          this.toFirstCapital(salesData.city) +
+          "\n" +
+          "P Code".padEnd(labelWidth - 2, "\u00A0") +
+          ": " +
+          salesData.tooltip +
+          "\n" +
+          "Sales".padEnd(labelWidth, "\u00A0") +
+          ": Rp. " +
+          dspSales;
+
+        console.log(text);
+
+        // Tampilkan dialog
+        if (!this._oDialog) {
+          this._oDialog = new sap.m.Dialog({
+            type: sap.m.DialogType.Message,
+            title: tittle,
+            content: new sap.m.Text({ text: text }),
+            beginButton: new sap.m.Button({
+              type: sap.m.ButtonType.Emphasized,
+              text: "Close",
+              press: function () {
+                this._oDialog.close();
+              }.bind(this),
+            }),
+          });
+        } else {
+          this._oDialog.setTitle(tittle);
+          this._oDialog.getContent()[0].setText(text);
+        }
+
+        this._oDialog.open();
       },
 
       // navButtonPress: function () {

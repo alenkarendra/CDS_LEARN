@@ -104,6 +104,11 @@
           "name": "RouteNewView",
           "pattern": "newview",
           "target": ["TargetNewView"]
+        },
+        {
+          "name": "Tableview",
+          "pattern": "Tableview",
+          "target": ["TargetTableview"]
         }
       ],
       "targets": {
@@ -120,6 +125,13 @@
           "clearControlAggregation": false,
           "viewId": "NewView",
           "viewName": "NewView"
+        },
+        "TargetTableview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Tableview",
+          "viewName": "Tableview"
         }
       }
     },

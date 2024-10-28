@@ -50,6 +50,25 @@
   background-color: var(--error-color) !important; 
 }
 
+/* Interactive Bar Chart */
+.sapSuiteIBCSemanticMarker.sapSuiteIBCSemanticGood {
+  background-color: var(--success-color) !important; 
+}
+.sapSuiteIBCSemanticMarker.sapSuiteIBCSemanticCritical {
+  background-color: var(--warning-color) !important; 
+}
+.sapSuiteIBCSemanticMarker.sapSuiteIBCSemanticError {
+  background-color: var(--error-color) !important; 
+}
+
+/* Generic Tag */
+.sapMGenericTagSuccess .sapMGenericTagWrap {
+    border-color: var(--success-color) !important; 
+}
+.sapMGenericTagError .sapMGenericTagWrap {
+    border-color: var(--error-color) !important;
+}
+
 /* ==================  DEPLOY ID  ======================== */
 /* Ketika di deploy, ID dari Bar Chart nya akan berubah seperti dibawah ini */
 

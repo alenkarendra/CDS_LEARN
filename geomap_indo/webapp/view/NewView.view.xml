@@ -91,9 +91,30 @@
 							</l:BlockLayoutCell>
 						</l:content>
 					</l:BlockLayoutRow>
+
 				</l:content>
 			</l:BlockLayout>
+
 			<!-- End Of Chart 1 -->
+
+			<!-- Start of Button Table View -->
+			<l:BlockLayout id="_IDGenBlockLayout5" background="Dashboard" visible="true">
+				<l:content>
+					<l:BlockLayoutRow id="_IDGenBlockLayoutRow4" rowColorSet="ColorSet1" scrollable="false">
+						<l:content>
+							<l:BlockLayoutCell id="_IDGenBlockLayoutCell2" width="1">
+								<l:content>
+									<VBox id="_IDGenVBox6" alignItems="Center" alignContent="Center" justifyContent="Center">
+										<Button id="_IDGenButton1" icon="sap-icon://table-view" text="View Table" press="onVTableClick"/>
+									</VBox>
+								</l:content>
+							</l:BlockLayoutCell>
+						</l:content>
+					</l:BlockLayoutRow>
+				</l:content>
+			</l:BlockLayout>
+			<!-- End of Button Table View -->
+
 
 			<!-- Start Of Table -->
 			<l:BlockLayout id="_IDGenBlockLayout1" background="Dashboard" visible="true">
@@ -102,37 +123,39 @@
 						<l:content>
 							<l:BlockLayoutCell id="_IDGenBlockLayoutCell" width="1">
 								<l:content>
+									<Panel expandable="true" headerText="Table">
 
-									<Table id="salesTable" items="{salesIndo>/salesData}">
-										<!-- Definisi Kolom -->
-										<columns>
-											<Column id="_IDGenColumn">
-												<Text id="_IDGenText3" text="Id_Code"/>
-											</Column>
-											<Column id="_IDGenColumn1">
-												<Text id="_IDGenText4" text="Kode Provinsi"/>
-											</Column>
-											<Column id="_IDGenColumn2">
-												<Text id="_IDGenText5" text="Provinsi"/>
-											</Column>
-											<Column id="_IDGenColumn3">
-												<Text id="_IDGenText6" text="Harga"/>
-											</Column>
-										</columns>
+										<Table id="salesTable" items="{salesIndo>/salesData}">
+											<!-- Definisi Kolom -->
+											<columns>
+												<Column id="_IDGenColumn">
+													<Text id="_IDGenText3" text="Code"/>
+												</Column>
+												<Column id="_IDGenColumn1">
+													<Text id="_IDGenText4" text="Kode Provinsi"/>
+												</Column>
+												<Column id="_IDGenColumn2">
+													<Text id="_IDGenText5" text="Provinsi"/>
+												</Column>
+												<Column id="_IDGenColumn3">
+													<Text id="_IDGenText6" text="Total Penjualan"/>
+												</Column>
+											</columns>
 
-										<!-- Template Item -->
-										<items>
-											<ColumnListItem id="_IDGenColumnListItem">
-												<cells>
-													<Text id="_IDGenText7" text="{salesIndo>id_code}"/>
-													<Text id="_IDGenText8" text="{salesIndo>tooltip}"/>
-													<Text id="_IDGenText9" text="{salesIndo>city}"/>
-													<Text id="_IDGenText10" text="{salesIndo>waers} {salesIndo>sales}"/>
-												</cells>
-											</ColumnListItem>
-										</items>
-									</Table>
+											<!-- Template Item -->
+											<items>
+												<ColumnListItem id="_IDGenColumnListItem">
+													<cells>
+														<Text id="_IDGenText7" text="{salesIndo>id_code}"/>
+														<Text id="_IDGenText8" text="{salesIndo>tooltip}"/>
+														<Text id="_IDGenText9" text="{salesIndo>city}"/>
+														<Text id="_IDGenText10" text="{salesIndo>waers} {salesIndo>dSales}"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
 
+									</Panel>
 								</l:content>
 							</l:BlockLayoutCell>
 						</l:content>
@@ -141,7 +164,8 @@
 			</l:BlockLayout>
 			<!-- End Of Table -->
 
-			<Panel id="_IDGenPanel1">
+			<Panel id="_IDGenPanel2">
+
 			</Panel>
 			<VBox id="_IDGenVBox4" alignContent="End" alignItems="End" direction="RowReverse">
 				<Link id="_IDGenLink1" text="©️ Source Code" target="_blank" href="https://github.com/alenkarendra/CDS_LEARN/tree/main/geomap_indo"/>

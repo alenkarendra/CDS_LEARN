@@ -7,7 +7,13 @@ sap.ui.define(
     "sap/m/MessageToast",
     "geomapindo/controller/Geomap.controller",
   ],
-  function (Controller, JSONModel, ChartContainer, ChartContainerContent, GeomapController) {
+  function (
+    Controller,
+    JSONModel,
+    ChartContainer,
+    ChartContainerContent,
+    GeomapController
+  ) {
     "use strict";
 
     return Controller.extend("geomapindo.controller.NewView", {
@@ -23,10 +29,10 @@ sap.ui.define(
 
         // this.oGeomapController = GeomapController();
         // this.oGeomapController.onInit(); // Panggil onInit jika perlu
-        
+
         // console.log(this.getView().getId());
         // var oController1 = sap.ui.getCore().byId("application-geomapindo-display-component---Geomap").getController();
-        
+
         // Objek yang mewakili tampilan UI
         var oView = this.getView();
 
@@ -97,11 +103,14 @@ sap.ui.define(
             let aChartData = [];
             let top10 = [];
 
-            // Masukkan data color ke array
+            // Masukkan data color ke array & Memasukkan data Display Sales
             for (let i = 0; i < data.results.length; i++) {
               let item = data.results[i];
               let color = "rgb(0,255,0)";
               item.color = color;
+
+              let displaySales = Number(item.sales).toLocaleString("id-ID");
+              item.dSales = displaySales; // Display Sales
 
               aChartData.push(item);
             }
@@ -137,7 +146,7 @@ sap.ui.define(
             // Set Model Localy
             that.getView().setModel(oModel, "salesIndo");
             //  Set Model Globaly
-            // sap.ui.getCore().setModel(oModel, "salesIndo"); 
+            // sap.ui.getCore().setModel(oModel, "salesIndo");
 
             // Optionally, check if the model is set in the view
             // console.log("Model salesIndo data:", oModel.getData());
@@ -224,15 +233,25 @@ sap.ui.define(
       onSelectData: function (oEvent) {
         // Mendapatkan data dari event selectData
         var oData = oEvent.getParameter("data");
+
         if (oData && oData[0]) {
           var selectedData = oData[0];
           var sCity = selectedData.data["City"];
           var sSales = selectedData.data["Sales"];
+          var dSales = Number(sSales).toLocaleString("id-ID");
 
           // Menampilkan data yang dipilih menggunakan MessageToast atau logic lain
-          sap.m.MessageToast.show("City: " + sCity + ", Sales: " + sSales);
+          sap.m.MessageToast.show(
+            "City: " + sCity + "\n" + "Sales: Rp. " + dSales
+          );
         }
       },
+
+      onVTableClick: function () {
+        var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+        oRouter.navTo("Tableview");       
+      },
+
     });
   }
 );
