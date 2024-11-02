@@ -5,115 +5,115 @@
     xmlns:c="sap.ui.core"
     xmlns:m="sap.m"
     xmlns:l="sap.ui.layout" height="100%">
-    <m:Page showHeader="true" enableScrolling="true" class="sapUiContentPadding" titleAlignment="Center" title="Table" showNavButton="true" navButtonPress="onBackPress" navButtonTooltip="Back">
-        <m:Panel expandable="true" expandAnimation="true" headerText="Table">
+    <m:Page id="_IDGenPage2" showHeader="true" enableScrolling="true" class="sapUiContentPadding" titleAlignment="Center" title="Table" showNavButton="true" navButtonPress="onBackPress" navButtonTooltip="Back">
+        <m:Panel id="_IDGenPanel1" expandable="true" expandAnimation="true" headerText="Table">
 
-            <l:BlockLayout id="_IDGenBlockLayout2" background="Dashboard" visible="true" >
+            <l:BlockLayout id="_IDGenBlockLayout4" background="Dashboard" visible="true">
                 <l:content>
-                    <l:BlockLayoutRow id="_IDGenBlockLayoutRow1" rowColorSet="ColorSet1" scrollable="false">
+                    <l:BlockLayoutRow id="_IDGenBlockLayoutRow5" rowColorSet="ColorSet1" scrollable="false">
                         <l:content>
                             <l:BlockLayoutCell id="idCell4" width="1">
                                 <l:content>
-                                    <Table rows="{/ProductCollection}" selectionMode="MultiToggle" ariaLabelledBy="title">
+                                    <Table id="_IDGenTable" rows="{/ProductCollection}" selectionMode="MultiToggle" ariaLabelledBy="title">
                                         <extension>
-                                            <m:OverflowToolbar style="Clear">
+                                            <m:OverflowToolbar id="_IDGenOverflowToolbar" style="Clear">
                                                 <m:Title id="title" text="Products"/>
                                             </m:OverflowToolbar>
                                         </extension>
                                         <columns>
-                                            <Column width="11rem">
-                                                <m:Label text="Product Name" />
+                                            <Column id="_IDGenColumn4" width="11rem">
+                                                <m:Label id="_IDGenLabel" text="Product Name" />
                                                 <template>
-                                                    <m:Text text="{Name}" wrapping="false" />
+                                                    <m:Text id="_IDGenText2" text="{Name}" wrapping="false" />
                                                 </template>
                                             </Column>
-                                            <Column width="11rem">
-                                                <m:Label text="Product Id" />
+                                            <Column id="_IDGenColumn5" width="11rem">
+                                                <m:Label id="_IDGenLabel1" text="Product Id" />
                                                 <template>
-                                                    <m:Input value="{ProductId}"/>
+                                                    <m:Input id="_IDGenInput" value="{ProductId}"/>
                                                 </template>
                                             </Column>
-                                            <Column width="6rem" hAlign="End">
-                                                <m:Label text="Quantity" />
+                                            <Column id="_IDGenColumn6" width="6rem" hAlign="End">
+                                                <m:Label id="_IDGenLabel2" text="Quantity" />
                                                 <template>
-                                                    <m:Label text="{Quantity}" />
+                                                    <m:Label id="_IDGenLabel3" text="{Quantity}" />
                                                 </template>
                                             </Column>
-                                            <Column width="9rem">
-                                                <m:Label text="Status" />
+                                            <Column id="_IDGenColumn7" width="9rem">
+                                                <m:Label id="_IDGenLabel4" text="Status" />
                                                 <template>
-                                                    <m:ObjectStatus text="{Status}" state="{
+                                                    <m:ObjectStatus id="_IDGenObjectStatus" text="{Status}" state="{
                                                             path: 'Available',
                                                             formatter: '.formatAvailableToObjectState'
                                                         }"/>
                                                 </template>
                                             </Column>
-                                            <Column width="9rem">
-                                                <m:Label text="Price" />
+                                            <Column id="_IDGenColumn8" width="9rem">
+                                                <m:Label id="_IDGenLabel5" text="Price" />
                                                 <template>
-                                                    <u:Currency value="{Price}" currency="{CurrencyCode}"/>
+                                                    <u:Currency id="_IDGenCurrency" value="{Price}" currency="{CurrencyCode}"/>
                                                 </template>
                                             </Column>
-                                            <Column width="12rem">
-                                                <m:Label text="Supplier" />
+                                            <Column id="_IDGenColumn9" width="12rem">
+                                                <m:Label id="_IDGenLabel6" text="Supplier" />
                                                 <template>
-                                                    <m:ComboBox value="{SupplierName}" items="{/Suppliers}">
-                                                        <c:Item text="{Name}"/>
+                                                    <m:ComboBox id="_IDGenComboBox" value="{SupplierName}" items="{/Suppliers}">
+                                                        <c:Item id="_IDGenItem" text="{Name}"/>
                                                     </m:ComboBox>
                                                 </template>
                                             </Column>
-                                            <Column width="9rem">
-                                                <m:Label text="Image" />
+                                            <Column id="_IDGenColumn10" width="9rem">
+                                                <m:Label id="_IDGenLabel7" text="Image" />
                                                 <template>
-                                                    <m:Link text="Show Image" href="{ProductPicUrl}" target="_blank"/>
+                                                    <m:Link id="_IDGenLink2" text="Show Image" href="{ProductPicUrl}" target="_blank"/>
                                                 </template>
                                             </Column>
-                                            <Column width="9rem">
-                                                <m:Label text="Details" />
+                                            <Column id="_IDGenColumn11" width="9rem">
+                                                <m:Label id="_IDGenLabel8" text="Details" />
                                                 <template>
-                                                    <m:Button text="Show Details" press="handleDetailsPress"/>
+                                                    <m:Button id="_IDGenButton2" text="Show Details" press="handleDetailsPress"/>
                                                 </template>
                                             </Column>
-                                            <Column width="7rem">
-                                                <m:Label text="Heavy Weight" />
+                                            <Column id="_IDGenColumn12" width="7rem">
+                                                <m:Label id="_IDGenLabel9" text="Heavy Weight" />
                                                 <template>
-                                                    <m:CheckBox selected="{Heavy}"/>
+                                                    <m:CheckBox id="_IDGenCheckBox" selected="{Heavy}"/>
                                                 </template>
                                             </Column>
-                                            <Column width="12rem">
-                                                <m:Label text="Main Category" />
+                                            <Column id="_IDGenColumn13" width="12rem">
+                                                <m:Label id="_IDGenLabel10" text="Main Category" />
                                                 <template>
-                                                    <m:Select selectedKey="{Category}" items="{/Categories}">
-                                                        <c:Item text="{Name}" key="{Name}"/>
+                                                    <m:Select id="_IDGenSelect" selectedKey="{Category}" items="{/Categories}">
+                                                        <c:Item id="_IDGenItem1" text="{Name}" key="{Name}"/>
                                                     </m:Select>
                                                 </template>
                                             </Column>
-                                            <Column width="12rem">
-                                                <m:Label text="Additional Categories" />
+                                            <Column id="_IDGenColumn14" width="12rem">
+                                                <m:Label id="_IDGenLabel11" text="Additional Categories" />
                                                 <template>
-                                                    <m:MultiInput value="{AdditionalCategory}" tokens="{AdditionalCategoriesSelection}">
+                                                    <m:MultiInput id="_IDGenMultiInput" value="{AdditionalCategory}" tokens="{AdditionalCategoriesSelection}">
                                                         <m:tokens>
-                                                            <m:Token key="{Key}" text="{Name}"/>
+                                                            <m:Token id="_IDGenToken" key="{Key}" text="{Name}"/>
                                                         </m:tokens>
                                                         <m:suggestionItems>
-                                                            <c:Item key="{ProductId}" text="{Name}" />
+                                                            <c:Item id="_IDGenItem2" key="{ProductId}" text="{Name}" />
                                                         </m:suggestionItems>
                                                     </m:MultiInput>
                                                 </template>
                                             </Column>
-                                            <Column width="6rem" hAlign="Center">
-                                                <m:Label text="Status" />
+                                            <Column id="_IDGenColumn15" width="6rem" hAlign="Center">
+                                                <m:Label id="_IDGenLabel12" text="Status" />
                                                 <template>
-                                                    <c:Icon src="{
+                                                    <c:Icon id="_IDGenIcon" src="{
                                                             path: 'Available',
                                                             formatter: '.formatAvailableToIcon'
                                                         }"/>
                                                 </template>
                                             </Column>
-                                            <Column width="11rem" hAlign="Center">
-                                                <m:Label text="Delivery Date" />
+                                            <Column id="_IDGenColumn16" width="11rem" hAlign="Center">
+                                                <m:Label id="_IDGenLabel13" text="Delivery Date" />
                                                 <template>
-                                                    <m:DatePicker value="{
+                                                    <m:DatePicker id="_IDGenDatePicker" value="{
                                                             path: 'DeliveryDate',
                                                             type: 'sap.ui.model.type.Date',
                                                             formatOptions: {source: {pattern: 'timestamp'}}

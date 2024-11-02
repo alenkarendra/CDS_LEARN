@@ -24,6 +24,9 @@ sap.ui.define(
         // var oGeomapController = oGeomapView.getController(); // Dapatkan instance controller
         // oGeomapController.someFunction(); // Panggil fungsi dari controller Geomap
 
+        console.log("tesssss11111");
+        
+
         // Memanggil Function dari Controller Geomap
         sap.ui.controller("geomapindo.controller.Geomap").someFunction();
 
