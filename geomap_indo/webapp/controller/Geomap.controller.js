@@ -559,6 +559,8 @@ sap.ui.define(
       onPressClick: function () {
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
         oRouter.navTo("RouteNewView");
+
+        console.log("button next view clicked");
       },
 
       onRevealGrid: function () {

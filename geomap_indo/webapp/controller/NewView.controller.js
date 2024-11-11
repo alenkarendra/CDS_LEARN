@@ -25,7 +25,6 @@ sap.ui.define(
         // oGeomapController.someFunction(); // Panggil fungsi dari controller Geomap
 
         console.log("tesssss11111");
-        
 
         // Memanggil Function dari Controller Geomap
         sap.ui.controller("geomapindo.controller.Geomap").someFunction();
@@ -88,7 +87,7 @@ sap.ui.define(
         // oChartContainer di berikan perintah untuk menyesuaikan tinggi dan lebar sesuai ukuran layar secara otomatis
         oChartContainer.setAutoAdjustHeight(true);
         // oView memberikan tampilan UI dengan konten yang diberikan oChartContainer yang telah diidentifikasi berdasarkan ID
-        oView.byId(sBlockId).addContent(oChartContainer);
+        oView.byId(sBlockId)?.addContent(oChartContainer);
       },
 
       onBackPress: function () {
@@ -252,9 +251,8 @@ sap.ui.define(
 
       onVTableClick: function () {
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-        oRouter.navTo("Tableview");       
+        oRouter.navTo("Tableview");
       },
-
     });
   }
 );
