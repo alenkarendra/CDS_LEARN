@@ -69,25 +69,23 @@
     border-color: var(--error-color) !important;
 }
 
-
-
 /* ==================  DEPLOY ID  ======================== */
 /* Ketika di deploy, ID dari Bar Chart nya akan berubah seperti dibawah ini */
 
 /* Hijau untuk Penjualan Tertinggi */
-#container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
-  background-color: var(--success-color) !important; 
-}
+/* #container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-0 {
+  background-color: #28a745 !important; 
+} */
 
 /* Kuning untuk Penjualan Rata-rata */
-#container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-1 {
-  background-color: var(--warning-color) !important; 
-}
+/* #container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-1 {
+  background-color: #ffc107 !important; 
+} */
 
 /* Merah untuk Penjualan Terendah */
-#container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-2 {
-  background-color: var(--error-color) !important; 
-}
+/* #container-geomapindo---Geomap--_IDGenInteractiveBarChart-bar-positive-2 {
+  background-color: #dc3545 !important; 
+} */
 
 /* ======================================================= */
 
