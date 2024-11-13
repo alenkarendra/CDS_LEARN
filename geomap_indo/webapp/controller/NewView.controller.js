@@ -94,6 +94,7 @@ sap.ui.define(
         // Option 1: Use router to navigate to a specific route
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
         oRouter.navTo("RouteGeomap");
+        window.location.reload(); // Menyegarkan halaman
       },
 
       generateSpot: function () {
