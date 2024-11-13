@@ -25,7 +25,7 @@
 				<l:content>
 					<l:BlockLayoutRow id="_IDGenBlockLayoutRow1" rowColorSet="ColorSet1" scrollable="false">
 						<l:content>
-							<l:BlockLayoutCell id="_IDGenBlockLayoutCell3" width="1">
+							<l:BlockLayoutCell id="idCell4" width="1">
 								<l:content>
 
 									<viz:VizFrame id="IDGenVizFrame" vizType="pie" uiConfig="{applicationSet:'fiori'}" width="100%" height="400px" vizProperties="{title: {text: 'Top 10 Sales Per Provinsi'}}" selectData="onSelectData">

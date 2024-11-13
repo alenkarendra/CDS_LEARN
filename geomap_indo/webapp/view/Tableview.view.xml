@@ -12,7 +12,7 @@
                 <l:content>
                     <l:BlockLayoutRow id="_IDGenBlockLayoutRow5" rowColorSet="ColorSet1" scrollable="false">
                         <l:content>
-                            <l:BlockLayoutCell id="idCell4" width="1">
+                            <l:BlockLayoutCell id="idCell5" width="1">
                                 <l:content>
                                     <Table id="_IDGenTable" rows="{/ProductCollection}" selectionMode="MultiToggle" ariaLabelledBy="title">
                                         <extension>
