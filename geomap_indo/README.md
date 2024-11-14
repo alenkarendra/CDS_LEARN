@@ -39,4 +39,6 @@ An SAP Fiori application.
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
+https://s4demo.soltius.co.id:44370/sap/bc/ui5_ui5/sap/zt0001_rmaps/index.html?sap-client=710#
+
 
