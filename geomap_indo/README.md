@@ -40,4 +40,12 @@ An SAP Fiori application.
 
 #### Pre-requisites:
 
+<<<<<<< HEAD
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version. (See https://nodejs.org)
+=======
+1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
+
+https://s4demo.soltius.co.id:44370/sap/bc/ui5_ui5/sap/zt0001_rmaps/index.html?sap-client=710#
+
+
+>>>>>>> 952409d8dcf33eaa8d1363df359a8f09eb6b6b7b
